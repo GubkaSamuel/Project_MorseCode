@@ -1,0 +1,891 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 23224
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Apr 05 19:35:44 CEST 2023
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 20
+
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 3
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	D:/Programy/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	D:/Programy/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	RTX3070
+User home directory: C:/Users/RTX3070
+User working directory: E:/Škola/DE1/Project_MorseCode/MorseCode
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: D:/Programy/Xilinx/Vivado
+HDI_APPROOT: D:/Programy/Xilinx/Vivado/2020.2
+RDI_DATADIR: D:/Programy/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: D:/Programy/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	D:/Programy/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	E:/Škola/DE1/Project_MorseCode/MorseCode/vivado.log
+Vivado journal file location: 	E:/Škola/DE1/Project_MorseCode/MorseCode/vivado.jou
+Engine tmp dir: 	E:/Škola/DE1/Project_MorseCode/MorseCode/.Xil/Vivado-23224-DESKTOP-CR729O1
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: D:/Programy/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: D:/Programy/Xilinx/Vivado/2020.2
+XILINX_VIVADO: D:/Programy/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: D:/Programy/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,086 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 101 MB (+103745kb) [00:00:04]
+// [Engine Memory]: 1,086 MB (+987388kb) [00:00:04]
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: E:\Škola\DE1\Project_MorseCode\MorseCode\MorseCode.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/240617/Project_MorseCode/MorseCode' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 114 MB (+8272kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1088 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programy/Xilinx/Vivado/2020.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 58 MB. Current time: 4/5/23, 7:35:45 PM CEST
+// Project name: MorseCode; location: E:/Škola/DE1/Project_MorseCode/MorseCode; part: xc7a50ticsg324-1L
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// [GUI Memory]: 121 MB (+1114kb) [00:00:10]
+// a (cr): Critical Messages: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // D
+// [GUI Memory]: 143 MB (+16185kb) [00:00:16]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, but_to_morse.vhd]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, but_to_morse.vhd]", 2, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("but_to_morse.vhd", 86, 730); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("but_to_morse.vhd", 45, 619); // bP
+selectCodeEditor("but_to_morse.vhd", 23, 622); // bP
+selectCodeEditor("but_to_morse.vhd", 27, 622); // bP
+selectCodeEditor("but_to_morse.vhd", 91, 604); // bP
+selectCodeEditor("but_to_morse.vhd", 77, 606); // bP
+selectCodeEditor("but_to_morse.vhd", 84, 604); // bP
+selectCodeEditor("but_to_morse.vhd", 254, 587); // bP
+selectCodeEditor("but_to_morse.vhd", 176, 607); // bP
+selectCodeEditor("but_to_morse.vhd", 262, 586); // bP
+// Elapsed time: 84 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // E
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File..."); // ak
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "clk_enable"); // aa
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // F
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 12 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sources_1/new/clk_enable.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sources_1/new/clk_enable.vhd 
+// I (cr): Define Module: addNotify
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 0, (String) null, 0); // ab
+selectButton(RDIResource.AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS, "Remove"); // E
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I
+// [GUI Memory]: 154 MB (+3997kb) [00:02:42]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, clk_enable(Behavioral) (clk_enable.vhd)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, clk_enable(Behavioral) (clk_enable.vhd)]", 6, false, false, false, false, false, true); // D - Double Click
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 32 seconds
+selectCodeEditor("clk_enable.vhd", 0, 384); // bP
+typeControlKey((HResource) null, "clk_enable.vhd", 'v'); // bP
+selectCodeEditor("clk_enable.vhd", 461, 398); // bP
+selectCodeEditor("clk_enable.vhd", 231, 572); // bP
+// Elapsed time: 21 seconds
+selectCodeEditor("clk_enable.vhd", 0, 599); // bP
+typeControlKey((HResource) null, "clk_enable.vhd", 'v'); // bP
+selectCodeEditor("clk_enable.vhd", 428, 697); // bP
+selectCodeEditor("clk_enable.vhd", 169, 715); // bP
+selectCodeEditor("clk_enable.vhd", 17, 812); // bP
+// Elapsed time: 57 seconds
+typeControlKey((HResource) null, "clk_enable.vhd", 'v'); // bP
+selectCodeEditor("clk_enable.vhd", 307, 760); // bP
+selectCodeEditor("clk_enable.vhd", 229, 193); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 4, false); // D
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 4, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 31 seconds
+selectCodeEditor("top.vhd", 129, 655); // bP
+// Elapsed time: 49 seconds
+selectCodeEditor("top.vhd", 248, 681); // bP
+selectCodeEditor("top.vhd", 248, 672); // bP
+// Elapsed time: 20 seconds
+selectCodeEditor("top.vhd", 50, 726); // bP
+// Elapsed time: 15 seconds
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+selectCodeEditor("top.vhd", 40, 811); // bP
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+selectCodeEditor("top.vhd", 46, 671); // bP
+selectCodeEditor("top.vhd", 167, 697); // bP
+// Elapsed time: 30 seconds
+selectCodeEditor("top.vhd", 85, 530); // bP
+selectCodeEditor("top.vhd", 96, 535); // bP
+selectCodeEditor("top.vhd", 23, 541); // bP
+selectCodeEditor("top.vhd", 35, 534); // bP
+selectCodeEditor("top.vhd", 29, 534); // bP
+// Elapsed time: 29 seconds
+selectCodeEditor("top.vhd", 401, 530); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("top.vhd", 66, 556); // bP
+selectCodeEditor("top.vhd", 355, 537); // bP
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+selectCodeEditor("top.vhd", 780, 671); // bP
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("top.vhd", 457, 538); // bP
+selectCodeEditor("top.vhd", 71, 530); // bP
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+selectCodeEditor("top.vhd", 283, 571); // bP
+selectCodeEditor("top.vhd", 354, 570); // bP
+selectCodeEditor("top.vhd", 449, 566); // bP
+selectCodeEditor("top.vhd", 389, 566); // bP
+// Elapsed time: 47 seconds
+selectCodeEditor("top.vhd", 362, 570); // bP
+selectCodeEditor("top.vhd", 290, 570); // bP
+selectCodeEditor("top.vhd", 476, 590); // bP
+selectCodeEditor("top.vhd", 708, 708); // bP
+selectCodeEditor("top.vhd", 578, 728); // bP
+selectCodeEditor("top.vhd", 417, 566); // bP
+// Elapsed time: 115 seconds
+selectCodeEditor("top.vhd", 705, 589); // bP
+selectCodeEditor("top.vhd", 718, 583); // bP
+selectCodeEditor("top.vhd", 528, 607); // bP
+selectCodeEditor("top.vhd", 184, 793); // bP
+selectCodeEditor("top.vhd", 191, 791); // bP
+// Elapsed time: 16 seconds
+selectCodeEditor("top.vhd", 162, 703); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("top.vhd", 187, 793); // bP
+selectCodeEditor("top.vhd", 186, 793); // bP
+// Elapsed time: 14 seconds
+selectCodeEditor("top.vhd", 162, 795); // bP
+// Elapsed time: 34 seconds
+selectCodeEditor("top.vhd", 521, 521); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+// k (cr): Text Changed: addNotify
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_CANCEL, "Cancel"); // a
+dismissDialog("Text Changed"); // k
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectCodeEditor("clk_enable.vhd", 395, 369); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 4); // D
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectCodeEditor("but_to_morse.vhd", 216, 228); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 7); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+// Elapsed time: 45 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 10, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenuItem(PAResourceQtoS.SrcMenu_REFRESH_HIERARCHY, "Refresh Hierarchy"); // ak
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 7, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8, false, false, false, false, false, true); // D - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 9); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 9); // D
+// Elapsed time: 10 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_EXISTING_OR_CREATE_NEW_CONSTRAINTS, "Add"); // E
+selectMenuItem(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files..."); // ak
+// Elapsed time: 15 seconds
+setFileChooser("E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/constrs_1/new/nexys-a7-50t.xdc");
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 22 seconds
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Add Sources"); // c
+// Tcl Message: add_files -fileset constrs_1 -norecurse E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/constrs_1/new/nexys-a7-50t.xdc 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 8); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, nexys-a7-50t.xdc]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, nexys-a7-50t.xdc]", 9, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("nexys-a7-50t.xdc", 2, 110); // bP
+selectCodeEditor("nexys-a7-50t.xdc", 1, 229); // bP
+// Elapsed time: 11 seconds
+selectCodeEditor("nexys-a7-50t.xdc", 2, 451); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 715, 361); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 61 seconds
+selectCodeEditor("top.vhd", 517, 389); // bP
+selectCodeEditor("top.vhd", 511, 388); // bP
+selectCodeEditor("top.vhd", 477, 402); // bP
+selectCodeEditor("top.vhd", 476, 414); // bP
+selectCodeEditor("top.vhd", 478, 429); // bP
+selectCodeEditor("top.vhd", 481, 456); // bP
+selectCodeEditor("top.vhd", 481, 464); // bP
+selectCodeEditor("top.vhd", 480, 476); // bP
+selectCodeEditor("top.vhd", 475, 497); // bP
+selectCodeEditor("top.vhd", 491, 391); // bP
+selectCodeEditor("top.vhd", 489, 424); // bP
+selectCodeEditor("top.vhd", 489, 466); // bP
+selectCodeEditor("top.vhd", 490, 520); // bP
+selectCodeEditor("top.vhd", 537, 546); // bP
+selectCodeEditor("top.vhd", 536, 543); // bP
+selectCodeEditor("top.vhd", 699, 521); // bP
+selectCodeEditor("top.vhd", 523, 541); // bP
+selectCodeEditor("top.vhd", 511, 377); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectCodeEditor("nexys-a7-50t.xdc", 592, 378); // bP
+selectCodeEditor("nexys-a7-50t.xdc", 0, 281); // bP
+selectCodeEditor("nexys-a7-50t.xdc", 987, 415); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectCodeEditor("nexys-a7-50t.xdc", 1, 419); // bP
+// Elapsed time: 30 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 414, 356); // bP
+selectCodeEditor("top.vhd", 358, 361); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 33 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectCodeEditor("nexys-a7-50t.xdc", 7, 300); // bP
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 37, 381); // bP
+selectCodeEditor("top.vhd", 37, 381, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 41, 412); // bP
+selectCodeEditor("top.vhd", 41, 433); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 45, 414); // bP
+selectCodeEditor("top.vhd", 50, 402); // bP
+selectCodeEditor("top.vhd", 38, 385); // bP
+selectCodeEditor("top.vhd", 55, 534); // bP
+selectCodeEditor("top.vhd", 42, 517); // bP
+selectCodeEditor("top.vhd", 46, 330); // bP
+selectCodeEditor("top.vhd", 37, 386); // bP
+selectCodeEditor("top.vhd", 37, 386, false, false, false, false, true); // bP - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top.vhd", 114, 378); // bP
+selectCodeEditor("top.vhd", 72, 378); // bP
+selectCodeEditor("top.vhd", 540, 390); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 69, 378); // bP
+selectCodeEditor("top.vhd", 71, 384); // bP
+selectCodeEditor("top.vhd", 491, 378); // bP
+selectCodeEditor("top.vhd", 55, 385); // bP
+selectCodeEditor("top.vhd", 55, 385); // bP
+selectCodeEditor("top.vhd", 459, 386); // bP
+selectCodeEditor("top.vhd", 43, 382); // bP
+selectCodeEditor("top.vhd", 31, 384); // bP
+selectCodeEditor("top.vhd", 166, 387); // bP
+selectCodeEditor("top.vhd", 174, 384); // bP
+selectCodeEditor("top.vhd", 169, 384); // bP
+selectCodeEditor("top.vhd", 255, 370); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+selectCodeEditor("nexys-a7-50t.xdc", 1, 447); // bP
+selectCodeEditor("nexys-a7-50t.xdc", 837, 284); // bP
+selectCodeEditor("nexys-a7-50t.xdc", 869, 188); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectCodeEditor("top.vhd", 510, 397); // bP
+// Elapsed time: 39 seconds
+selectCodeEditor("top.vhd", 593, 447); // bP
+selectCodeEditor("top.vhd", 648, 514); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys-a7-50t.xdc", 4); // m
+// Elapsed time: 25 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+// Elapsed time: 298 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false, false, false, false, false, true); // D - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 95 MB. Current time: 4/5/23, 8:05:50 PM CEST
+// Elapsed time: 92 seconds
+selectCodeEditor("abc_to_morse.vhd", 129, 594); // bP
+selectCodeEditor("abc_to_morse.vhd", 103, 589); // bP
+// Elapsed time: 177 seconds
+selectCodeEditor("abc_to_morse.vhd", 336, 603); // bP
+selectCodeEditor("abc_to_morse.vhd", 341, 603); // bP
+selectCodeEditor("abc_to_morse.vhd", 359, 623); // bP
+// Elapsed time: 28 seconds
+selectCodeEditor("abc_to_morse.vhd", 255, 618); // bP
+selectCodeEditor("abc_to_morse.vhd", 260, 621); // bP
+// Elapsed time: 44 seconds
+selectCodeEditor("abc_to_morse.vhd", 397, 627); // bP
+// Elapsed time: 313 seconds
+selectCodeEditor("abc_to_morse.vhd", 391, 670); // bP
+// Elapsed time: 36 seconds
+selectCodeEditor("abc_to_morse.vhd", 388, 674); // bP
+// Elapsed time: 15 seconds
+selectCodeEditor("abc_to_morse.vhd", 41, 706); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+selectCodeEditor("abc_to_morse.vhd", 56, 718); // bP
+// Elapsed time: 31 seconds
+selectCodeEditor("abc_to_morse.vhd", 502, 754); // bP
+// Elapsed time: 32 seconds
+selectCodeEditor("abc_to_morse.vhd", 364, 760); // bP
+// Elapsed time: 24 seconds
+selectCodeEditor("abc_to_morse.vhd", 57, 796); // bP
+// Elapsed time: 73 seconds
+selectCodeEditor("abc_to_morse.vhd", 3, 809); // bP
+selectCodeEditor("abc_to_morse.vhd", 24, 818); // bP
+// Elapsed time: 17 seconds
+selectCodeEditor("abc_to_morse.vhd", 27, 850); // bP
+selectCodeEditor("abc_to_morse.vhd", 23, 841); // bP
+selectCodeEditor("abc_to_morse.vhd", 254, 823); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("abc_to_morse.vhd", 64, 759); // bP
+// Elapsed time: 11 seconds
+selectCodeEditor("abc_to_morse.vhd", 487, 571); // bP
+// Elapsed time: 52 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 5); // m
+selectCodeEditor("abc_to_morse.vhd", 94, 502); // bP
+selectCodeEditor("abc_to_morse.vhd", 74, 547); // bP
+// Elapsed time: 26 seconds
+selectCodeEditor("abc_to_morse.vhd", 378, 567); // bP
+selectCodeEditor("abc_to_morse.vhd", 295, 552); // bP
+selectCodeEditor("abc_to_morse.vhd", 159, 507); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("abc_to_morse.vhd", 106, 518); // bP
+selectCodeEditor("abc_to_morse.vhd", 74, 517); // bP
+// Elapsed time: 15 seconds
+selectCodeEditor("abc_to_morse.vhd", 391, 479); // bP
+selectCodeEditor("abc_to_morse.vhd", 360, 505); // bP
+selectCodeEditor("abc_to_morse.vhd", 354, 515); // bP
+selectCodeEditor("abc_to_morse.vhd", 270, 570); // bP
+selectCodeEditor("abc_to_morse.vhd", 356, 512); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+selectCodeEditor("abc_to_morse.vhd", 194, 535); // bP
+selectCodeEditor("abc_to_morse.vhd", 339, 571); // bP
+// Elapsed time: 32 seconds
+selectCodeEditor("abc_to_morse.vhd", 224, 801); // bP
+// Elapsed time: 16 seconds
+selectCodeEditor("abc_to_morse.vhd", 71, 761); // bP
+// Elapsed time: 206 seconds
+selectCodeEditor("abc_to_morse.vhd", 136, 759); // bP
+// Elapsed time: 44 seconds
+selectCodeEditor("abc_to_morse.vhd", 42, 674); // bP
+selectCodeEditor("abc_to_morse.vhd", 42, 674, false, false, false, false, true); // bP - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("abc_to_morse.vhd", 119, 679); // bP
+// Elapsed time: 14 seconds
+selectCodeEditor("abc_to_morse.vhd", 131, 669); // bP
+selectCodeEditor("abc_to_morse.vhd", 131, 669, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("abc_to_morse.vhd", 83, 674); // bP
+selectCodeEditor("abc_to_morse.vhd", 123, 675); // bP
+selectCodeEditor("abc_to_morse.vhd", 150, 681); // bP
+selectCodeEditor("abc_to_morse.vhd", 135, 754); // bP
+selectCodeEditor("abc_to_morse.vhd", 200, 762); // bP
+selectCodeEditor("abc_to_morse.vhd", 161, 795); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 88 MB. Current time: 4/5/23, 8:35:50 PM CEST
+// Elapsed time: 859 seconds
+selectCodeEditor("abc_to_morse.vhd", 154, 762); // bP
+selectCodeEditor("abc_to_morse.vhd", 208, 759); // bP
+// Elapsed time: 40 seconds
+selectCodeEditor("abc_to_morse.vhd", 168, 757); // bP
+// Elapsed time: 71 seconds
+selectCodeEditor("abc_to_morse.vhd", 124, 261); // bP
+selectCodeEditor("abc_to_morse.vhd", 181, 550); // bP
+selectCodeEditor("abc_to_morse.vhd", 36, 778); // bP
+// Elapsed time: 26 seconds
+selectCodeEditor("abc_to_morse.vhd", 167, 639); // bP
+// Elapsed time: 21 seconds
+selectCodeEditor("abc_to_morse.vhd", 140, 757); // bP
+// Elapsed time: 29 seconds
+selectCodeEditor("abc_to_morse.vhd", 65, 569); // bP
+selectCodeEditor("abc_to_morse.vhd", 182, 538); // bP
+// Elapsed time: 17 seconds
+selectCodeEditor("abc_to_morse.vhd", 286, 450); // bP
+selectCodeEditor("abc_to_morse.vhd", 286, 450, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("abc_to_morse.vhd", 362, 464); // bP
+selectCodeEditor("abc_to_morse.vhd", 269, 703); // bP
+selectCodeEditor("abc_to_morse.vhd", 83, 674); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'c'); // bP
+selectCodeEditor("abc_to_morse.vhd", 273, 700); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 18 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 64 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 43 seconds
+selectCodeEditor("abc_to_morse.vhd", 478, 153); // bP
+selectCodeEditor("abc_to_morse.vhd", 477, 146); // bP
+selectCodeEditor("abc_to_morse.vhd", 419, 141); // bP
+selectCodeEditor("abc_to_morse.vhd", 419, 141, false, false, false, false, true); // bP - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("abc_to_morse.vhd", 262, 713); // bP
+selectCodeEditor("abc_to_morse.vhd", 264, 725); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 18 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 51 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 56 seconds
+selectCodeEditor("abc_to_morse.vhd", 253, 748); // bP
+selectCodeEditor("abc_to_morse.vhd", 262, 737); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 29 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 20 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 26 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 19 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 29 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 28 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 27 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 33 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 24 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 52 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 31 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 56 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 36 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 26 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 42 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 27 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 20 seconds
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 19 seconds
+selectCodeEditor("abc_to_morse.vhd", 166, 637); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("abc_to_morse.vhd", 264, 670); // bP
+// Elapsed time: 21 seconds
+selectCodeEditor("abc_to_morse.vhd", 139, 727); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 17 seconds
+selectCodeEditor("abc_to_morse.vhd", 33, 706); // bP
+// Elapsed time: 11 seconds
+selectCodeEditor("abc_to_morse.vhd", 56, 346); // bP
+selectCodeEditor("abc_to_morse.vhd", 258, 367); // bP
+selectCodeEditor("abc_to_morse.vhd", 256, 315); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 26 seconds
+selectCodeEditor("abc_to_morse.vhd", 326, 517); // bP
+selectCodeEditor("abc_to_morse.vhd", 435, 511); // bP
+selectCodeEditor("abc_to_morse.vhd", 296, 437); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 25 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, key_to_morse(Behavioral) (key_to_morse.vhd)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, key_to_morse(Behavioral) (key_to_morse.vhd)]", 5, false, false, false, false, true, false); // D - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ak
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Remove Sources"); // aE
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sources_1/new/key_to_morse.vhd] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sources_1/new/key_to_morse.vhd 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 9); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, clock_enable(behavioral) (clk_enable.vhd)]", 11, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_SET_USED_IN_PROP, "Set Used In..."); // ak
+// Run Command: PAResourceCommand.PACommandNames_SET_USED_IN_PROP
+// dj (cr): Set Used In: addNotify
+selectCheckBox(PAResourceQtoS.SetUsedInProp_SIMULATION, "Simulation", false); // g: FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Set Used In"); // dj
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property used_in_simulation false [get_files  E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sources_1/new/clk_enable.vhd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 3, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 32 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // E
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File..."); // ak
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "tb_abc_to_morse"); // aa
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Tcl Command: 'file mkdir E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sim_1/new'
+dismissDialog("Create Source File"); // F
+// Tcl Message: file mkdir E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sim_1/new 
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 17 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sim_1/new/tb_abc_to_morse.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.srcs/sim_1/new/tb_abc_to_morse.vhd 
+// I (cr): Define Module: addNotify
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 0, (String) null, 0); // ab
+selectButton(RDIResource.AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS, "Remove"); // E
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I
+// TclEventType: DG_GRAPH_STALE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 10); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_abc_to_morse.vhd", 109, 21); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 123, 31); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 128, 44); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("top.vhd", 106, 43); // bP
+selectCodeEditor("top.vhd", 89, 44); // bP
+typeControlKey((HResource) null, "top.vhd", 'c'); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("abc_to_morse.vhd", 115, 48); // bP
+selectCodeEditor("abc_to_morse.vhd", 120, 41); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'v'); // bP
+selectCodeEditor("abc_to_morse.vhd", 125, 92); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 10, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_abc_to_morse.vhd", 123, 34); // bP
+typeControlKey((HResource) null, "tb_abc_to_morse.vhd", 'v'); // bP
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_abc_to_morse.vhd", 5); // m
+// Elapsed time: 12 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 133, 585); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 371, 635); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 276, 655); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 88 MB. Current time: 4/5/23, 9:05:50 PM CEST
+// Elapsed time: 30 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_abc_to_morse.vhd", 5); // m
+// Elapsed time: 28 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 140, 707); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 125, 698); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4); // m
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4, false, true); // m - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // N
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4); // m
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4, false, true); // m - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // N
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4); // m
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "abc_to_morse.vhd", 4, true, false); // m - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem
+selectCodeEditor("tb_abc_to_morse.vhd", 125, 716); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 125, 707); // bP
+// Elapsed time: 52 seconds
+selectCodeEditor("abc_to_morse.vhd", 271, 440); // bP
+selectCodeEditor("abc_to_morse.vhd", 262, 438); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 285, 725); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 370, 723); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 54, 791); // bP
+// Elapsed time: 16 seconds
+selectCodeEditor("abc_to_morse.vhd", 29, 437); // bP
+typeControlKey((HResource) null, "abc_to_morse.vhd", 'c'); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 44, 792); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 48, 792); // bP
+typeControlKey((HResource) null, "tb_abc_to_morse.vhd", 'v'); // bP
+// Elapsed time: 101 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 189, 817); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 41, 755); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 42, 776); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 41, 790); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 88, 817); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 105, 808); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 72, 821); // bP
+// Elapsed time: 199 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 56, 721); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 56, 721); // bP
+typeControlKey((HResource) null, "tb_abc_to_morse.vhd", 'c'); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 60, 822); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 54, 823); // bP
+typeControlKey((HResource) null, "tb_abc_to_morse.vhd", 'v'); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 325, 792); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 248, 794); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 345, 790); // bP
+// Elapsed time: 146 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 182, 789); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 96, 793); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 184, 796); // bP
+// Elapsed time: 170 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 59, 230); // bP
+// Elapsed time: 26 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 368, 177); // bP
+// Elapsed time: 19 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 452, 678); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 183, 625); // bP
+// Elapsed time: 15 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 195, 617); // bP
+// Elapsed time: 20 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 159, 450); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 309, 425); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 309, 414); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 258, 607); // bP
+// Elapsed time: 22 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 384, 673); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 463, 667); // bP
+selectCodeEditor("tb_abc_to_morse.vhd", 217, 233); // bP
+// Elapsed time: 22 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 96, 774); // bP
+// Elapsed time: 11 seconds
+selectCodeEditor("tb_abc_to_morse.vhd", 321, 753); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectButton(PAResourceItoN.MainToolbarMgr_RUN, (String) null); // aE
+selectCodeEditor("tb_abc_to_morse.vhd", 306, 119); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 10, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 10, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_abc_to_morse(Behavioral) (tb_abc_to_morse.vhd)]", 10, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// am (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a
+// bz (cr):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// e (cr):  Run Simulation : addNotify
+dismissDialog("Save Project"); // am
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'tb_abc_to_morse' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 8 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// a (cr): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages]", 1); // ah
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages]", 1); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-313] Project file moved from 'C:/Users/240617/Project_MorseCode/MorseCode' since last save.. ]", 2, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-313] Project file moved from 'C:/Users/240617/Project_MorseCode/MorseCode' since last save.. ]", 2, false, false, false, false, false, true); // ah - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 3); // m
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.. ]", 18, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false); // ah
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "clk_enable.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "but_to_morse.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_abc_to_morse.vhd", 4); // m
+// Elapsed time: 22 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Board 49-67] The board_part definition was not found for digilentinc.com:nexys-a7-50t:part0:1.2. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.. ]", 4, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Board 49-67] The board_part definition was not found for digilentinc.com:nexys-a7-50t:part0:1.2. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.. ]", 4, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Board 49-67] The board_part definition was not found for digilentinc.com:nexys-a7-50t:part0:1.2. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.. ]", 4, false, false, false, false, false, true); // ah - Double Click
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3, true); // ah - Node
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "settings"); // E
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// d (cr): Settings: addNotify
+dismissDialog("Settings"); // d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.gen/sources_1', nor could it be found using path 'C:/Users/240617/Project_MorseCode/MorseCode/MorseCode.gen/sources_1'.. ]", 3, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false, false, false, false, true, false); // ah - Popup Trigger
+selectMenu(PAResourceItoN.MsgTreePanel_MESSAGE_SEVERITY, "Message Severity"); // ah
+selectMenu(PAResourceItoN.MsgTreePanel_MESSAGE_SEVERITY, "Message Severity"); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'E:/Škola/DE1/Project_MorseCode/MorseCode/MorseCode.sim/sim_1/behav/xsim/xvhdl.log' file for more information.. ]", 17, false); // ah
+// Elapsed time: 69 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, abc_to_morse(Behavioral) (abc_to_morse.vhd)]", 2, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("abc_to_morse.vhd", 290, 832); // bP
+selectCodeEditor("abc_to_morse.vhd", 290, 835); // bP
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cr): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Elaborate Design"); // A
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cr): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A
+// Tcl Message: synth_design -rtl -rtl_skip_mlo -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -rtl_skip_mlo -name rtl_1 Starting synth_design Using part: xc7a50ticsg324-1L Top: top 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,556 MB. GUI used memory: 80 MB. Current time: 4/5/23, 9:26:46 PM CEST
+// TclEventType: ELABORATE_START

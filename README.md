@@ -6,7 +6,7 @@
 
 ## Theoretical description and explanation
 
-Enter a description of the problem and how to solve it.
+Morseovu abecedu pro všechna písmena (26) jsme si rozepsali podle tabulky viz. Abeceda.xlsx (pokud nezapomenu, ještě ji vložím jako tabulku sem - možná v ní ještě něco přibyde)
 
 ## Hardware description of demo application
 
@@ -18,7 +18,9 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulation
 
-Write descriptive text and simulation screenshots of your components.
+1. abc_to_morse
+    Simulovali jsme písmena znázorněné v bin kódu ('a'-'z' => 0-25, zbytek (26-31) je jako 'z'). Testbench se jmenuje v projektu tb_abc_to_morse.
+    Screenshot: ![your figure](tb_abc_to_morse.png)
 
 ## Instructions
 
@@ -26,5 +28,6 @@ Write an instruction manual for your application, including photos or a link to 
 
 ## References
 
-1. Put here the literature references you used.
-2. ...
+1. https://codegolf.stackexchange.com/questions/173837/longest-seven-segment-word
+2. https://en.wikipedia.org/wiki/Morse_code
+3. 

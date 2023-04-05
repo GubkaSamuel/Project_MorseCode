@@ -32,9 +32,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity but_to_morse is
-    Port ( CLK100MHz : in STD_LOGIC;
-    
-    );
+    Port ( CLK100MHz : in STD_LOGIC
+            );
 end but_to_morse;
 
 architecture Behavioral of but_to_morse is
