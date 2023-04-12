@@ -34,7 +34,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity top is
     Port (
     CLK100MHZ : in std_logic; --hlavní clock
-    BTNU      : in std_logic; --tla?ítko pro zadání morse
     LED       : out   std_logic; --dioda indikace stla?ení
     SW        : in std_logic_vector(5 downto 0); --p?epína?e pro ur?ení písmene (26 písmen => 2^5) + p?epína? režimu (p?íjem/vysílání morse) 
     CA        : out   std_logic;                     --! Cathod A
@@ -45,7 +44,12 @@ entity top is
     CF        : out   std_logic;                     --! Cathod F
     CG        : out   std_logic;                     --! Cathod G
     AN        : out   std_logic_vector(7 downto 0);  --! Common anode signals to individual displays
-    BTNC      : in    std_logic                      --! Synchronous reset
+    BTNC      : in    std_logic;                     --! Synchronous reset
+    BTNU      : in    std_logic;                     --! tlacitko pro zmenu pismene nahoru
+    BTND      : in    std_logic;                     --! tlacitko pro zmenu pismene dolu
+    BTNR      : in    std_logic                      --! enter pro odeslani
+    
+    
      );
 end top;
 

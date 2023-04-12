@@ -58,107 +58,107 @@ begin
             
             when "00000" =>
              
-             morse <= "010100"; --a
+             morse <= "01"; --a
             
             when "00001" =>
             
-             morse <= "111000"; --b
+             morse <= "1000"; --b
              
             when "00010" =>
             
-             morse <= "111010"; --c
+             morse <= "1010"; --c
             
             when "00011" =>
             
-             morse <= "101000"; --d
+             morse <= "100"; --d
              
             when "00100" =>
             
-             morse <= "000000"; --e 
+             morse <= "0"; --e 
              
             when "00101" =>
             
-             morse <= "110010"; --f
+             morse <= "0010"; --f
              
             when "00110" =>
             
-             morse <= "101100"; --g
+             morse <= "110"; --g
             
             when "00111" =>
             
-             morse <= "110000"; --h
+             morse <= "0000"; --h
              
             when "01000" =>
             
-             morse <= "010000"; --i
+             morse <= "00"; --i
             
             when "01001" =>
             
-             morse <= "110111"; --j
+             morse <= "0111"; --j
              
             when "01010" =>
             
-             morse <= "101010"; --k
+             morse <= "101"; --k
             
             when "01011" =>
             
-             morse <= "110100"; --l
+             morse <= "0100"; --l
             
             when "01100" =>
             
-             morse <= "011100"; --m
+             morse <= "11"; --m
             
             when "01101" =>
             
-             morse <= "011000"; --n
+             morse <= "10"; --n
              
             when "01110" =>
             
-             morse <= "101110"; --o
+             morse <= "111"; --o
             
             when "01111" =>
             
-             morse <= "110110"; --p
+             morse <= "0110"; --p
              
             when "10000" =>
             
-             morse <= "111101"; --q
+             morse <= "1101"; --q
             
             when "10001" =>
             
-             morse <= "100100"; --r
+             morse <= "010"; --r
             
             when "10010" =>
             
-             morse <= "100000"; --s
+             morse <= "00"; --s
             
             when "10011" =>
             
-             morse <= "001000"; --t
+             morse <= "1"; --t
             
             when "10100" =>
             
-             morse <= "100010"; --u
+             morse <= "001"; --u
             
             when "10101" =>
             
-             morse <= "110001"; --v
+             morse <= "0001"; --v
              
             when "10110" =>
             
-             morse <= "100110"; --w
+             morse <= "011"; --w
             
             when "10111" =>
             
-             morse <= "111001"; --x
+             morse <= "1001"; --x
             
             when "11000" =>
             
-             morse <= "111011"; --y
+             morse <= "1011"; --y
              
             when others =>
             
-             morse <= "111100"; --z 
+             morse <= "1100"; --z 
              
         end case;
     end if;
