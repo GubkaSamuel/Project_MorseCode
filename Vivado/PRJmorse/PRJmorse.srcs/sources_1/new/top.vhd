@@ -34,7 +34,7 @@ entity top is
         BTND : in STD_LOGIC;                        -- button for letters change down
         BTNR : in STD_LOGIC;                        -- button for enter
         SW   : in STD_LOGIC;                        -- I/O switch (receiver / transmitter)
-        
+        JA   : in STD_LOGIC;                        -- Analog pinout used as INPUT
         
         
         AN : out STD_LOGIC_VECTOR(6 downto 0);      -- Anode for 7 segment display
@@ -45,13 +45,16 @@ entity top is
         CE : out STD_LOGIC;                         -- Cathode E
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
-        JA : out STD_LOGIC;                         -- Analog pinout
-        LED16_R : out STD_LOGIC                     -- Diode for check
+        JA : out STD_LOGIC;                         -- Analog pinout used as OUTPUT
+        LED16_R : out STD_LOGIC                     -- Diode for signal view
     );
 end top;
 ----------------------------------------------------------------------------------
 architecture Behavioral of top is
     
+    constant dot_threshold : integer := 500000000;      -- threshold for dot
+    constant comma_threshold : integer := 2000000000;   -- threshold for comma
+
     signal sig_clk_en : std_logic;              -- clock enable signal
     signal selected_letter_id : integer := 0;   -- selected letter id
     signal ready : std_logic;                   -- ready check statement
@@ -99,11 +102,13 @@ begin
             state => SW,
             letter_id => selected_letter_id,
             enter_pulse => submit,
+            dot_threshold => dot_threshold;
+            comma_threshold => comma_threshold;
             
             ready => ready,
             an_out => JA,
             led_out => LED16_R
-            
+
         );
     
     -- switch process state if we expect receiving or transmitting

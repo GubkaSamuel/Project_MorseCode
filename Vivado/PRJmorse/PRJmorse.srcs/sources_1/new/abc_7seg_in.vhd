@@ -21,18 +21,25 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use work.morse_pkg.ALL; -- our own package of array of letter with morse code
+use work.sev_seg_pkg.ALL;  -- our own package or array of letter with 7 seg cathode represented as binary
 
 entity abc_7seg_in is
---  Port ( );
+    Port (
+        clk         : in std_logic;                 -- master clock
+        state       : in std_logic;                 -- state signal (transmitter/receiver)
+        analog_in   : in std_logic;                 -- analog input with morse code signal
+        clk_en      : in std_logic;                 -- clock enable signal
+        dot_t       : in integer;                   -- dot threshold 
+        comma_t     : in integer;                   -- comma threshold
+
+        led         : out std_logic;                -- signal imput visualizer
+        lett_id     : out integer;                  -- recognized letter id
+        confirm     : out std_logic                 -- confirm letter recognition
+    );
 end abc_7seg_in;
 
 architecture Behavioral of abc_7seg_in is

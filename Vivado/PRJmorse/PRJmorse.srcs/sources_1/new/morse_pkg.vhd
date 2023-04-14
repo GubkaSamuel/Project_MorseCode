@@ -29,6 +29,7 @@ package morse_pkg is
     type letter_index_array is array (CHARACTER) of INTEGER;
     type index_to_letter_array is array (INTEGER range 1 to 36) of CHARACTER;
     type index_to_morse_array is array (INTEGER range 1 to 36) of STD_LOGIC_VECTOR(1 to 5);
+    type morse_to_index_array is array STD_LOGIC_VECTOR(1 to 5) of (INTEGER  range 1 to 36);
     
     constant MORSE_TABLE: letter_morse_array := (
         'A' => ".-",
@@ -224,5 +225,48 @@ constant INDEX_TO_MORSE: index_to_morse_array := (
     35 => "11110",  -- 9
     36 => "11111"   -- 0
 );
+
+constant MORSE_TO_INDEX: morse_to_index_array := (
+    "01" => 1,      -- A
+    "1000" => 2,    -- B
+    "1010" => 3,    -- C
+    "100" => 4,     -- D
+    "0" => 5,       -- E
+    "0010" => 6,    -- F
+    "110" => 7,     -- G
+    "0000" => 8,    -- H
+    "00" => 9,      -- I
+    "0111" => 10,   -- J
+    "101" => 11,    -- K
+    "0100" => 12,   -- L
+    "11" => 13,     -- M
+    "10" => 14,     -- N
+    "111" => 15,    -- O
+    "0110" => 16,   -- P
+    "1101" => 17,   -- Q
+    "010" => 18,    -- R
+    "000" => 19,    -- S
+    "1" => 20,      -- T
+    "001" => 21,    -- U
+    "0001" => 22,   -- V
+    "011" => 23,    -- W
+    "1001" => 24,   -- X
+    "1011" => 25,   -- Y
+    "1100" => 26,   -- Z
+    "01111" => 27,  -- 1
+    "00111" => 28,  -- 2
+    "00011" => 29,  -- 3
+    "00001" => 30,  -- 4
+    "00000" => 31,  -- 5
+    "10000" => 32,  -- 6
+    "11000" => 33,  -- 7
+    "11100" => 34,  -- 8
+    "11110" => 35,  -- 9
+    "11111" => 36   -- 0
+);
+
+
+
+
 
 end package morse_pkg;

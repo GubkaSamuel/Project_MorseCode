@@ -34,7 +34,9 @@ entity morse_deliver is
         state       : in std_logic;                     -- state switch (receiver/transmitter mode)
         letter_id   : in integer;                       -- letter id (selected from other component)
         enter_pulse : in std_logic;                     -- pulse signal from abc_7seg_out if enter has been pressed
-        
+        dot_threshold : in std_logic;
+        comma_threshold; in std_logic;
+
         ready       : out std_logic;                    -- ready switch to send info counter is running
         an_out      : out std_logic;                    -- signal out (morse code)
         led_out     : out std_logic                     -- show visually what are we sending on analog out
@@ -42,9 +44,6 @@ entity morse_deliver is
 end morse_deliver;
 
 architecture Behavioral of morse_deliver is
-    constant dot_threshold : integer := 500000000;      -- threshold for dot
-    constant comma_threshold : integer := 2000000000;   -- threshold for comma
-    
     signal counter : integer := 0;                      -- clock counter
     signal morse_code : std_logic_vector(1 to 5);       -- morse code "buffer"
     signal morse_index: integer := 1;                   -- counter for how many symbols does this letter have
