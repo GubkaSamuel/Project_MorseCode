@@ -2,30 +2,99 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu Apr 13 00:04:58 2023
-# Process ID: 16460
+# Start of session at: Wed Apr 19 00:35:26 2023
+# Process ID: 4700
 # Current directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25100 E:\Škola\DE1\Project_MorseCode\Vivado\PRJmorse\PRJmorse.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8040 E:\Škola\DE1\Project_MorseCode\Vivado\PRJmorse\PRJmorse.xpr
 # Log file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/vivado.log
 # Journal file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.xpr
 update_compile_order -fileset sources_1
-add_files -norecurse {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/clk_en.vhd E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_in.vhd E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd}
-add_files -norecurse E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd
-close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_pkg.vhd w ]
-add_files E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_pkg.vhd
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+file mkdir E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_morse_detect.vhd w ]
+add_files -fileset sim_1 E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_morse_detect.vhd
+close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_morse_deliver.vhd w ]
+add_files -fileset sim_1 E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_morse_deliver.vhd
+close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd w ]
+add_files -fileset sim_1 E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd
+close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_in.vhd w ]
+add_files -fileset sim_1 E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_in.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_abc_7seg_in [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/Morse_Maps.vhd w ]
+add_files E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/Morse_Maps.vhd
 update_compile_order -fileset sources_1
-close [ open E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/7seg_pkg.vhd w ]
-add_files E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/7seg_pkg.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/Morse_Maps.vhd] -no_script -reset -force -quiet
+remove_files  E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/Morse_Maps.vhd
+launch_simulation
+export_ip_user_files -of_objects  [get_files E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_pkg.vhd] -no_script -reset -force -quiet
+remove_files  E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_pkg.vhd
+file delete -force E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_pkg.vhd
+launch_simulation
+launch_simulation
+source tb_abc_7seg_in.tcl
+relaunch_sim
+relaunch_sim
+close_sim
+set_property ip.user_files_dir E:/kola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.ip_user_files [current_project]
+set_property -name {xsim.simulate.runtime} -value {300ns} -objects [get_filesets sim_1]
+launch_simulation
+source tb_abc_7seg_in.tcl
+add_bp {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_in.vhd} 49
+remove_bps -file {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_in.vhd} -line 49
+close_sim
+launch_simulation
+source tb_abc_7seg_in.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_abc_7seg_out [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_abc_7seg_out.tcl
+add_bp {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd} 65
+add_bp {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd} 66
+remove_bps -file {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd} -line 66
+remove_bps -file {E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd} -line 65
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source tb_abc_7seg_out.tcl
+close_sim
+launch_simulation
+source tb_abc_7seg_out.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim

@@ -24,10 +24,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-use work.morse_pkg.ALL; -- our own package of array of letter with morse code
 use work.sev_seg_pkg.ALL;  -- our own package or array of letter with 7 seg cathode represented as binary
 ----------------------------------------------------------------------------------
 entity abc_7seg_out is
@@ -53,7 +50,7 @@ architecture Behavioral of abc_7seg_out is
     signal but_up_counter : integer := 0;               -- add debounce counter for but_up
     signal but_down_counter : integer := 0;             -- add debounce counter for but_down
     signal but_enter_counter : integer := 0;            -- add debounce counter for but_enter
-    constant debounce_threshold : integer := 5000;      -- set debounce threshold
+    constant debounce_threshold : integer := 50000;     -- set debounce threshold
 
 
 begin
@@ -118,6 +115,8 @@ begin
                 but_down_counter <= 0;
                 but_enter_counter <= 0;
             end if;
+            else
+                cat <= "1111110";
             end if;
             end if;
         end if;

@@ -21,10 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-use work.morse_pkg.ALL; -- our own package of array of letter with morse code
 ----------------------------------------------------------------------------------
 entity top is
     Port (
@@ -34,10 +31,11 @@ entity top is
         BTND : in STD_LOGIC;                        -- button for letters change down
         BTNR : in STD_LOGIC;                        -- button for enter
         SW   : in STD_LOGIC;                        -- I/O switch (receiver / transmitter)
-        JA   : in STD_LOGIC;                        -- Analog pinout used as INPUT
+        
+        JA   : inout STD_LOGIC;                     -- Analog pinout used as OUTPUT and INPUT
         
         
-        AN : out STD_LOGIC_VECTOR(6 downto 0);      -- Anode for 7 segment display
+        AN : out STD_LOGIC_VECTOR(7 downto 0);      -- Anode for 7 segment display
         CA : out STD_LOGIC;                         -- Cathode A
         CB : out STD_LOGIC;                         -- Cathode B
         CC : out STD_LOGIC;                         -- Cathode C
@@ -45,7 +43,6 @@ entity top is
         CE : out STD_LOGIC;                         -- Cathode E
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
-        JA : out STD_LOGIC;                         -- Analog pinout used as OUTPUT
         LED16_R : out STD_LOGIC                     -- Diode for signal view
     );
 end top;
@@ -58,7 +55,7 @@ architecture Behavioral of top is
     signal sig_clk_en : std_logic;              -- clock enable signal
     signal selected_letter_id : integer := 0;   -- selected letter id
     signal ready : std_logic;                   -- ready check statement
-    signal submit : std_logic := '0';           -- send pulse signal (50ns) if we press enter in transmitter mode
+    signal submit : std_logic := '0';           -- send pulse signal if we press enter or if we recognize letter
     
 begin
     -- component for clock enable signal
@@ -72,7 +69,6 @@ begin
       ce  => sig_clk_en
     );
     
-    -- component for letter selection and 7 seg display
     abc_7seg_out : entity work.abc_7seg_out
         port map (
             clk => CLK100MHZ,
@@ -102,26 +98,45 @@ begin
             state => SW,
             letter_id => selected_letter_id,
             enter_pulse => submit,
-            dot_threshold => dot_threshold;
-            comma_threshold => comma_threshold;
+            dot_threshold => dot_threshold,
+            comma_threshold => comma_threshold,
             
             ready => ready,
             an_out => JA,
             led_out => LED16_R
 
         );
-    
-    -- switch process state if we expect receiving or transmitting
-    process (CLK100MHZ, SW)
-    begin
-        if rising_edge(CLK100MHZ) then
-            if SW = '0' then
-                    
-            else
-                
-            end if;
-        end if;
-    end process;
+    morse_detect : entity work.morse_detect
+        port map (
+            clk => CLK100MHZ, 
+            state => SW,
+            analog_in => JA,
+            clk_en => sig_clk_en,
+            dot_t => dot_threshold,
+            comma_t => comma_threshold,
+            
+            led => LED16_R,
+            lett_id => selected_letter_id
+        );
+    abc_7seg_in : entity work.abc_7seg_in
+        port map (
+            clk => CLK100MHZ, 
+            state => SW,
+            clk_en => sig_clk_en,
+            rst => BTNC,
+            letter_id => selected_letter_id,
+            
+            cat(0) => CA,
+            cat(1) => CB,
+            cat(2) => CC,
+            cat(3) => CD,
+            cat(4) => CE,
+            cat(5) => CF,
+            cat(6) => CG
+        );
+        
+        
+     AN <= b"1111_0111"; -- connecting anode to 3,3V
     
 end Behavioral;
 ----------------------------------------------------------------------------------

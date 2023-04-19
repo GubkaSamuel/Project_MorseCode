@@ -20,11 +20,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-use work.morse_pkg.ALL; -- our own package of array of letter with morse code
-use work.sev_seg_pkg.ALL;  -- our own package or array of letter with 7 seg cathode represented as binary
 
 entity morse_deliver is
     Port (
@@ -34,8 +30,8 @@ entity morse_deliver is
         state       : in std_logic;                     -- state switch (receiver/transmitter mode)
         letter_id   : in integer;                       -- letter id (selected from other component)
         enter_pulse : in std_logic;                     -- pulse signal from abc_7seg_out if enter has been pressed
-        dot_threshold : in std_logic;
-        comma_threshold; in std_logic;
+        dot_threshold : in integer;
+        comma_threshold: in integer;
 
         ready       : out std_logic;                    -- ready switch to send info counter is running
         an_out      : out std_logic;                    -- signal out (morse code)
@@ -58,7 +54,82 @@ begin
             if state = '0' then                                                         -- doesnt work if set as receiver
                 ready <= not sending;                                                   -- ready is negation of sending, in the next code we are starting the sending process and making sure it wont end untill the actual "sending" is done :)
                 if enter_pulse = '1' and sending = '0' then
-                    morse_code <= INDEX_TO_MORSE(letter_id);                            -- get morse code into vector
+                    case letter_id is
+                        when 1 =>
+                            morse_code <= "01";      -- A
+                        when 2 =>
+                            morse_code <= "1000";    -- B
+                        when 3 =>
+                            morse_code <= "1010";    -- C
+                        when 4 =>
+                            morse_code <= "100";     -- D
+                        when 5 =>
+                            morse_code <= "0";       -- E
+                        when 6 =>
+                            morse_code <= "0010";    -- F
+                        when 7 =>
+                            morse_code <= "110";     -- G
+                        when 8 =>
+                            morse_code <= "0000";    -- H
+                        when 9 =>
+                            morse_code <= "00";      -- I
+                        when 10 =>
+                            morse_code <= "0111";    -- J
+                        when 11 =>
+                            morse_code <= "101";     -- K
+                        when 12 =>
+                            morse_code <= "0100";    -- L
+                        when 13 =>
+                            morse_code <= "11";      -- M
+                        when 14 =>
+                            morse_code <= "10";      -- N
+                        when 15 =>
+                            morse_code <= "111";     -- O
+                        when 16 =>
+                            morse_code <= "0110";    -- P
+                        when 17 =>
+                            morse_code <= "1101";    -- Q
+                        when 18 =>
+                            morse_code <= "010";     -- R
+                        when 19 =>
+                            morse_code <= "000";     -- S
+                        when 20 =>
+                            morse_code <= "1";       -- T
+                        when 21 =>
+                            morse_code <= "001";     -- U
+                        when 22 =>
+                            morse_code <= "0001";    -- V
+                        when 23 =>
+                            morse_code <= "011";     -- W
+                        when 24 =>
+                            morse_code <= "1001";    -- X
+                        when 25 =>
+                            morse_code <= "1011";    -- Y
+                        when 26 =>
+                            morse_code <= "1100";    -- Z
+                        when 27 =>
+                            morse_code <= "01111";   -- 1
+                        when 28 =>
+                            morse_code <= "00111";   -- 2
+                        when 29 =>
+                            morse_code <= "00011";   -- 3
+                        when 30 =>
+                            morse_code <= "00001";   -- 4
+                        when 31 =>
+                            morse_code <= "00000";   -- 5
+                        when 32 =>
+                            morse_code <= "10000";   -- 6
+                        when 33 =>
+                            morse_code <= "11000";   -- 7
+                        when 34 =>
+                            morse_code <= "11100";   -- 8
+                        when 35 =>
+                            morse_code <= "11110";   -- 9
+                        when 36 =>
+                            morse_code <= "11111";   -- 0
+                        when others =>
+                            morse_code <= "00000";   -- Invalid letter index
+                    end case;
                     morse_index <= 1;                                                   -- morse index is our "operating" symbol
                     sending <= '1';                                                     -- start sending
                 end if;

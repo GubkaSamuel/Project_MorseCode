@@ -1,0 +1,16 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programy/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fc16f6aa1999409ebd0b5d1398a7b0e6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_abc_7seg_out_behav xil_defaultlib.tb_abc_7seg_out -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package xil_defaultlib.sev_seg_pkg
+Compiling architecture behavioral of entity xil_defaultlib.abc_7seg_out [abc_7seg_out_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_abc_7seg_out
+Built simulation snapshot tb_abc_7seg_out_behav
