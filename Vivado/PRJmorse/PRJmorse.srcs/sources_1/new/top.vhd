@@ -22,6 +22,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+use work.sev_seg_pkg.ALL;                           -- our own package or array of letter with 7 seg cathode represented as binary
+
 ----------------------------------------------------------------------------------
 entity top is
     Port (
@@ -32,8 +34,8 @@ entity top is
         BTNR : in STD_LOGIC;                        -- button for enter
         SW   : in STD_LOGIC;                        -- I/O switch (receiver / transmitter)
         
-        JA   : inout STD_LOGIC;                     -- Analog pinout used as OUTPUT and INPUT
-        
+        JAA  : in STD_LOGIC;                        -- Analog pinout used as INPUT
+        JAB  : out STD_LOGIC;                       -- Analog pinout used as OUTPUT
         
         AN : out STD_LOGIC_VECTOR(7 downto 0);      -- Anode for 7 segment display
         CA : out STD_LOGIC;                         -- Cathode A
@@ -43,7 +45,8 @@ entity top is
         CE : out STD_LOGIC;                         -- Cathode E
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
-        LED16_R : out STD_LOGIC                     -- Diode for signal view
+        LED16_R : out STD_LOGIC;                    -- Diode for signal view IN
+        LED16_G : out STD_LOGIC                     -- Diode for signal view OUT
     );
 end top;
 ----------------------------------------------------------------------------------
@@ -54,8 +57,11 @@ architecture Behavioral of top is
 
     signal sig_clk_en : std_logic;              -- clock enable signal
     signal selected_letter_id : integer := 0;   -- selected letter id
+    signal recognized_letter_id : integer := 0;   -- selected letter id
     signal ready : std_logic;                   -- ready check statement
     signal submit : std_logic := '0';           -- send pulse signal if we press enter or if we recognize letter
+    
+    signal cat : std_logic_vector(6 downto 0);  -- cathode outputs for process down below
     
 begin
     -- component for clock enable signal
@@ -81,13 +87,6 @@ begin
             ready => ready,
             
             send => submit,
-            cat(0) => CA,
-            cat(1) => CB,
-            cat(2) => CC,
-            cat(3) => CD,
-            cat(4) => CE,
-            cat(5) => CF,
-            cat(6) => CG,
             letter_id => selected_letter_id  
         );
     morse_deliver : entity work.morse_deliver
@@ -102,41 +101,55 @@ begin
             comma_threshold => comma_threshold,
             
             ready => ready,
-            an_out => JA,
-            led_out => LED16_R
+            an_out => JAB,
+            led_out => LED16_G
 
         );
     morse_detect : entity work.morse_detect
         port map (
             clk => CLK100MHZ, 
             state => SW,
-            analog_in => JA,
+            an_in => JAA,
             clk_en => sig_clk_en,
             dot_t => dot_threshold,
             comma_t => comma_threshold,
             
             led => LED16_R,
-            lett_id => selected_letter_id
-        );
-    abc_7seg_in : entity work.abc_7seg_in
-        port map (
-            clk => CLK100MHZ, 
-            state => SW,
-            clk_en => sig_clk_en,
-            rst => BTNC,
-            letter_id => selected_letter_id,
-            
-            cat(0) => CA,
-            cat(1) => CB,
-            cat(2) => CC,
-            cat(3) => CD,
-            cat(4) => CE,
-            cat(5) => CF,
-            cat(6) => CG
+            lett_id => recognized_letter_id
         );
         
+-- We used this mechanic in the process below
+--    abc_7seg_in : entity work.abc_7seg_in
+--       port map (
+--            clk => CLK100MHZ, 
+--            state => SW,
+--            clk_en => sig_clk_en,
+--            rst => BTNC,
+--            letter_id => selected_letter_id
+--        );
         
-     AN <= b"1111_0111"; -- connecting anode to 3,3V
-    
+        
+     AN <= b"1111_1110"; -- connecting anode to 3,3V
+     
+     
+        -- switch process state if we expect receiving or transmitting
+    process (CLK100MHZ)
+        begin
+            if rising_edge(CLK100MHZ) then
+                if SW = '1' then
+                    cat <= id_SEV_SEG_TABLE(selected_letter_id);
+                else 
+                    cat <= id_SEV_SEG_TABLE(recognized_letter_id);
+                end if;
+                CA <= cat(0);
+                CB <= cat(1);
+                CC <= cat(2);
+                CD <= cat(3);
+                CE <= cat(4);
+                CF <= cat(5);
+                CG <= cat(6);
+                     
+            end if;
+        end process;
 end Behavioral;
 ----------------------------------------------------------------------------------

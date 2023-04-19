@@ -1,0 +1,295 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a50ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8768
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'clock_enable' [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/clk_en.vhd:38]
+	Parameter g_max bound to: 1000000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_enable' (1#1) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/clk_en.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'abc_7seg_out' [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'abc_7seg_out' (2#1) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:46]
+WARNING: [Synth 8-7043] port width mismatch for port 'letter_id': port width = 6, actual width = 32 (integer) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'morse_deliver' [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'morse_deliver' (3#1) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'morse_detect' [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 8 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:118]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 8 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:148]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 16 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:126]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 16 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:110]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 16 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:136]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 16 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:134]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:146]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:150]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:144]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:154]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:116]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:130]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:122]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 24 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:138]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:124]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:152]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:120]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:132]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:140]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:128]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:112]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:156]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:114]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:158]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:160]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 40 wide and choice expression is 32 wide [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:142]
+WARNING: [Synth 8-3919] null assignment ignored [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:185]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'morse_detect' (4#1) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'top' (5#1) [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 999.008 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/constrs_1/new/Nexys-A7-50T-Master.xdc]
+Finished Parsing XDC File [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/constrs_1/new/Nexys-A7-50T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/constrs_1/new/Nexys-A7-50T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 999.008 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'morse_detect'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+               signal_on |                               01 |                               01
+              signal_off |                               10 |                               10
+            inter_letter |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'morse_detect'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 6     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                8 Bit    Registers := 5     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 12    
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	  37 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 5     
+	  37 Input    6 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 21    
+	   4 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+---------------------+---------------+----------------+
+|Module Name | RTL Object          | Depth x Width | Implemented As | 
++------------+---------------------+---------------+----------------+
+|top         | id_SEV_SEG_TABLE[0] | 64x7          | LUT            | 
+|top         | id_SEV_SEG_TABLE[0] | 64x7          | LUT            | 
+|top         | id_SEV_SEG_TABLE[0] | 64x7          | LUT            | 
+|top         | id_SEV_SEG_TABLE[0] | 64x7          | LUT            | 
++------------+---------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 999.008 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   100|
+|3     |LUT1   |    80|
+|4     |LUT2   |   122|
+|5     |LUT3   |    11|
+|6     |LUT4   |    45|
+|7     |LUT5   |    18|
+|8     |LUT6   |    39|
+|9     |FDRE   |   256|
+|10    |FDSE   |     2|
+|11    |IBUF   |     7|
+|12    |OBUF   |    18|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1007.938 ; gain = 8.930
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1007.938 ; gain = 8.930
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1007.938 ; gain = 8.930
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1018.090 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1020.809 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1020.809 ; gain = 21.801
+INFO: [Common 17-1381] The checkpoint 'C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 19 15:05:20 2023...

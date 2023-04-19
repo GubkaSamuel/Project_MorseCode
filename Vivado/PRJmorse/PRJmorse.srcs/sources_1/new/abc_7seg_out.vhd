@@ -39,8 +39,7 @@ entity abc_7seg_out is
         ready       : in std_logic;                     -- ready state (awaiting for morse to be sent)
         
         send        : out std_logic;                    -- sends puls if we submit (by pressing enter)
-        cat         : out std_logic_vector(6 downto 0); -- cathode for 7 seg
-        letter_id   : out integer range 1 to 36         -- letter number (a = 0, z = 25)
+        letter_id   : out integer range 0 to 36         -- letter number (a = 0, z = 25)
     );
 end abc_7seg_out;
 ----------------------------------------------------------------------------------
@@ -61,7 +60,7 @@ begin
             if rst = '0' then                                                           -- doesnt work if reset button is pressed
             if state = '0' then                                                         -- doesnt work if set as receiver
             if ready = '0' then
-                cat <= "1111110";                                                       -- if there is some other stuff running (ready check isn't complete) then 7 seg shows '-'
+                letter_id <= 0;                                                         -- if there is some other stuff running (ready check isn't complete) then 7 seg shows '-'
             else
             
                 -- BUTTON SELECTION LOGIC
@@ -78,8 +77,7 @@ begin
                         if(selected_index < 36) then
                             selected_index <= selected_index + 1;
                         else selected_index <= 1;
-                        end if;
-                        cat <= id_SEV_SEG_TABLE(selected_index);
+                        end if;                       
                     end if;
                 else but_up_counter <= 0;
                 end if;
@@ -92,7 +90,6 @@ begin
                         selected_index <= selected_index - 1;
                         else selected_index <= 36;
                         end if;
-                        cat <= id_SEV_SEG_TABLE(selected_index);
                     end if;
                 else but_down_counter <= 0;
                 end if;
@@ -116,7 +113,7 @@ begin
                 but_enter_counter <= 0;
             end if;
             else
-                cat <= "1111110";
+                letter_id <= 0;
             end if;
             end if;
         end if;

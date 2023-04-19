@@ -24,14 +24,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-use work.morse_pkg.ALL;                             -- our own package of array of letter with morse code
 use work.sev_seg_pkg.ALL;                           -- our own package or array of letter with 7 seg cathode represented as binary
 
 entity morse_detect is
     Port (
         clk         : in std_logic;                 -- master clock
         state       : in std_logic;                 -- state signal (transmitter/receiver)
-        analog_in   : in std_logic;                 -- analog input with morse code signal
+        an_in       : in std_logic;              -- analog input with morse code signal
         clk_en      : in std_logic;                 -- clock enable signal
         dot_t       : in integer;                   -- dot threshold 
         comma_t     : in integer;                   -- comma threshold
@@ -46,7 +45,7 @@ architecture Behavioral of morse_detect is
 -- local variables (morse_state with 4 possible states)
     type morse_state is (IDLE, SIGNAL_ON, SIGNAL_OFF, INTER_LETTER);
     signal current_state: morse_state;
-    signal current_letter: string;
+    signal current_letter: string(1 to 5);
     signal current_length: integer := 0;
 
 begin
@@ -55,14 +54,14 @@ begin
         -- main clock implementation
         if rising_edge(clk) and state = '1' then
             -- led indicates if analog_in is 0 or 1
-            led <= analog_in;
+            led <= an_in;
             
             -- 4 cases (states)
             case current_state is
                 
                 -- idle = we are waiting for '1' on imput
                 when IDLE =>
-                    if analog_in = '1' then
+                    if an_in = '1' then
                         current_length <= 0;
                         current_state <= SIGNAL_ON;
                     end if;
@@ -70,7 +69,7 @@ begin
                 -- we have '1' on imput and we are waiting for '0', then we decide if it was a comma or dot (1 or 0)
                 when SIGNAL_ON =>
                     current_length <= current_length + 1;
-                    if analog_in = '0' then
+                    if an_in = '0' then
                         if current_length <= dot_t then
                             if current_letter'length < 5 then
                                 current_letter <= current_letter & "0";
@@ -92,7 +91,7 @@ begin
                 -- we have '0' on imput but we still dont know if the letter ended, so we wait for '0' or for *comma_t* time to continue with signal_on or to submit letter
                 when SIGNAL_OFF =>
                     current_length <= current_length + 1;
-                    if analog_in = '1' then
+                    if an_in = '1' then
                         current_state <= SIGNAL_ON;
                         current_length <= 0;
                     elsif current_length > dot_t then
@@ -101,7 +100,7 @@ begin
                 
                 -- after we submited letter, we decide what index does this letter have
                 when INTER_LETTER =>
-                    if analog_in = '1' then
+                    if an_in = '1' then
                         current_length <= 0;
                         current_state <= SIGNAL_ON;
                     else

@@ -34,14 +34,14 @@ entity morse_deliver is
         comma_threshold: in integer;
 
         ready       : out std_logic;                    -- ready switch to send info counter is running
-        an_out      : out std_logic;                    -- signal out (morse code)
+        an_out      : out std_logic;                  -- signal out (morse code)
         led_out     : out std_logic                     -- show visually what are we sending on analog out
     );
 end morse_deliver;
 
 architecture Behavioral of morse_deliver is
     signal counter : integer := 0;                      -- clock counter
-    signal morse_code : std_logic_vector(1 to 5);       -- morse code "buffer"
+    signal morse_code : string(1 to 5);   -- morse code "buffer"
     signal morse_index: integer := 1;                   -- counter for how many symbols does this letter have
     signal sending : std_logic := '0';                  -- indicator if we are still sending morse letter
     
@@ -56,57 +56,57 @@ begin
                 if enter_pulse = '1' and sending = '0' then
                     case letter_id is
                         when 1 =>
-                            morse_code <= "01";      -- A
+                            morse_code <= "01   ";      -- A
                         when 2 =>
-                            morse_code <= "1000";    -- B
+                            morse_code <= "1000 ";    -- B
                         when 3 =>
-                            morse_code <= "1010";    -- C
+                            morse_code <= "1010 ";    -- C
                         when 4 =>
-                            morse_code <= "100";     -- D
+                            morse_code <= "100  ";     -- D
                         when 5 =>
-                            morse_code <= "0";       -- E
+                            morse_code <= "0    ";       -- E
                         when 6 =>
-                            morse_code <= "0010";    -- F
+                            morse_code <= "0010 ";    -- F
                         when 7 =>
-                            morse_code <= "110";     -- G
+                            morse_code <= "110  ";     -- G
                         when 8 =>
-                            morse_code <= "0000";    -- H
+                            morse_code <= "0000 ";    -- H
                         when 9 =>
-                            morse_code <= "00";      -- I
+                            morse_code <= "00   ";      -- I
                         when 10 =>
-                            morse_code <= "0111";    -- J
+                            morse_code <= "0111 ";    -- J
                         when 11 =>
-                            morse_code <= "101";     -- K
+                            morse_code <= "101  ";     -- K
                         when 12 =>
-                            morse_code <= "0100";    -- L
+                            morse_code <= "0100 ";    -- L
                         when 13 =>
-                            morse_code <= "11";      -- M
+                            morse_code <= "11   ";      -- M
                         when 14 =>
-                            morse_code <= "10";      -- N
+                            morse_code <= "10   ";      -- N
                         when 15 =>
-                            morse_code <= "111";     -- O
+                            morse_code <= "111  ";     -- O
                         when 16 =>
-                            morse_code <= "0110";    -- P
+                            morse_code <= "0110 ";    -- P
                         when 17 =>
-                            morse_code <= "1101";    -- Q
+                            morse_code <= "1101 ";    -- Q
                         when 18 =>
-                            morse_code <= "010";     -- R
+                            morse_code <= "010  ";     -- R
                         when 19 =>
-                            morse_code <= "000";     -- S
+                            morse_code <= "000  ";     -- S
                         when 20 =>
-                            morse_code <= "1";       -- T
+                            morse_code <= "1    ";       -- T
                         when 21 =>
-                            morse_code <= "001";     -- U
+                            morse_code <= "001  ";     -- U
                         when 22 =>
-                            morse_code <= "0001";    -- V
+                            morse_code <= "0001 ";    -- V
                         when 23 =>
-                            morse_code <= "011";     -- W
+                            morse_code <= "011  ";     -- W
                         when 24 =>
-                            morse_code <= "1001";    -- X
+                            morse_code <= "1001 ";    -- X
                         when 25 =>
-                            morse_code <= "1011";    -- Y
+                            morse_code <= "1011 ";    -- Y
                         when 26 =>
-                            morse_code <= "1100";    -- Z
+                            morse_code <= "1100 ";    -- Z
                         when 27 =>
                             morse_code <= "01111";   -- 1
                         when 28 =>
@@ -147,6 +147,9 @@ begin
                     elsif morse_code(morse_index) = '1' and counter <= comma_threshold then
                         an_out <= '1';
                         led_out <= '1';
+                    elsif morse_code(morse_index) = ' ' then
+                        an_out <= '0';
+                        led_out <= '0';
                     else
                         an_out <= '0';
                         led_out <= '0';

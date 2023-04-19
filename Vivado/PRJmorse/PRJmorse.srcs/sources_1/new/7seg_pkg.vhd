@@ -27,7 +27,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 package sev_seg_pkg is
     type letter_7seg_array is array (CHARACTER) of STD_LOGIC_VECTOR(6 downto 0);
-    type id_7seg_array is array (INTEGER range 1 to 36) of STD_LOGIC_VECTOR(6 downto 0);
+    type id_7seg_array is array (INTEGER range 0 to 36) of STD_LOGIC_VECTOR(6 downto 0);
     
     constant letter_SEV_SEG_TABLE: letter_7seg_array := (
         'A' => "0001000",
