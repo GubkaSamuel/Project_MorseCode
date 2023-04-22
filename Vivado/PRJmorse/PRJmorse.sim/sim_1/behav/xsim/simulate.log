@@ -1,4 +1,4 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
 Note: Stimulus process finished
-Time: 250 ns  Iteration: 0  Process: /tb_abc_7seg_out/p_stimulus  File: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_abc_7seg_out.vhd
+Time: 900 ns  Iteration: 0  Process: /tb_top/p_stimulus  File: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sim_1/new/tb_top.vhd

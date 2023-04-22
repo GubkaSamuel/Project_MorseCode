@@ -29,9 +29,9 @@ use work.sev_seg_pkg.ALL;                           -- our own package or array 
 entity morse_detect is
     Port (
         clk         : in std_logic;                 -- master clock
+        rst         : in std_logic;                 -- synchronous reset
         state       : in std_logic;                 -- state signal (transmitter/receiver)
         an_in       : in std_logic;              -- analog input with morse code signal
-        clk_en      : in std_logic;                 -- clock enable signal
         dot_t       : in integer;                   -- dot threshold 
         comma_t     : in integer;                   -- comma threshold
 
@@ -52,7 +52,9 @@ begin
     process (clk)
     begin
         -- main clock implementation
-        if rising_edge(clk) and state = '1' then
+        if rising_edge(clk) then
+        if rst = '0' then
+        if state = '1' then
             -- led indicates if analog_in is 0 or 1
             led <= an_in;
             
@@ -107,57 +109,57 @@ begin
                         current_length <= current_length + 1;
                         if current_length > comma_t then
                             case current_letter is
-                                when "01" =>
+                                when "01   " =>
                                     lett_id <= 1; -- A
-                                when "1000" =>
+                                when "1000 " =>
                                     lett_id <= 2; -- B
-                                when "1010" =>
+                                when "1010 " =>
                                     lett_id <= 3; -- C
-                                when "100" =>
+                                when "100  " =>
                                     lett_id <= 4; -- D
-                                when "0" =>
+                                when "0    " =>
                                     lett_id <= 5; -- E
-                                when "0010" =>
+                                when "0010 " =>
                                     lett_id <= 6; -- F
-                                when "110" =>
+                                when "110  " =>
                                     lett_id <= 7; -- G
-                                when "0000" =>
+                                when "0000 " =>
                                     lett_id <= 8; -- H
-                                when "00" =>
+                                when "00   " =>
                                     lett_id <= 9; -- I
-                                when "0111" =>
+                                when "0111 " =>
                                     lett_id <= 10; -- J
-                                when "101" =>
+                                when "101  " =>
                                     lett_id <= 11; -- K
-                                when "0100" =>
+                                when "0100 " =>
                                     lett_id <= 12; -- L
-                                when "11" =>
+                                when "11   " =>
                                     lett_id <= 13; -- M
-                                when "10" =>
+                                when "10   " =>
                                     lett_id <= 14; -- N
-                                when "111" =>
+                                when "111  " =>
                                     lett_id <= 15; -- O
-                                when "0110" =>
+                                when "0110 " =>
                                     lett_id <= 16; -- P
-                                when "1101" =>
+                                when "1101 " =>
                                     lett_id <= 17; -- Q
-                                when "010" =>
+                                when "010  " =>
                                     lett_id <= 18; -- R
-                                when "000" =>
+                                when "000  " =>
                                     lett_id <= 19; -- S
-                                when "1" =>
+                                when "1    " =>
                                     lett_id <= 20; -- T
-                                when "001" =>
+                                when "001  " =>
                                     lett_id <= 21; -- U
-                                when "0001" =>
+                                when "0001 " =>
                                     lett_id <= 22; -- V
-                                when "011" =>
+                                when "011  " =>
                                     lett_id <= 23; -- W
-                                when "1001" =>
+                                when "1001 " =>
                                     lett_id <= 24; -- X
-                                when "1011" =>
+                                when "1011 " =>
                                     lett_id <= 25; -- Y
-                                when "1100" =>
+                                when "1100 " =>
                                     lett_id <= 26; -- Z
                                 when "01111" =>
                                     lett_id <= 27; -- 1
@@ -182,11 +184,13 @@ begin
                                 when others =>
                                     lett_id <= -1; -- neplatná hodnota
                             end case;
-                            current_letter <= "";
+                            current_letter <= "     ";
                             current_state <= IDLE;
                         end if;
                     end if;
             end case;
+        end if;
+        end if;
         end if;
     end process;
     

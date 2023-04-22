@@ -30,7 +30,6 @@ use work.sev_seg_pkg.ALL;  -- our own package or array of letter with 7 seg cath
 entity abc_7seg_out is
     Port (
         clk         : in std_logic;                     -- main clock
-        clk_en      : in std_logic;                     -- clock enable impulse
         rst         : in std_logic;                     -- reset
         state       : in std_logic;                     -- state switch (receiver/transmitter mode)
         but_up      : in std_logic;                     -- letter up button
@@ -39,7 +38,7 @@ entity abc_7seg_out is
         ready       : in std_logic;                     -- ready state (awaiting for morse to be sent)
         
         send        : out std_logic;                    -- sends puls if we submit (by pressing enter)
-        letter_id   : out integer range 0 to 36         -- letter number (a = 0, z = 25)
+        letter_id   : out integer                       -- letter number (a = 0, z = 25)
     );
 end abc_7seg_out;
 ----------------------------------------------------------------------------------
@@ -49,20 +48,19 @@ architecture Behavioral of abc_7seg_out is
     signal but_up_counter : integer := 0;               -- add debounce counter for but_up
     signal but_down_counter : integer := 0;             -- add debounce counter for but_down
     signal but_enter_counter : integer := 0;            -- add debounce counter for but_enter
-    constant debounce_threshold : integer := 50000;     -- set debounce threshold
+    constant debounce_threshold : integer := 0;--50000;     -- set debounce threshold
 
 
 begin
     p_abc_7seg_out : process (clk) is
     begin
         if rising_edge(clk) then                                                        -- react on clock
-            if clk_en = '1' then                                                        -- doesnt work if clock enable isnt enabled
             if rst = '0' then                                                           -- doesnt work if reset button is pressed
             if state = '0' then                                                         -- doesnt work if set as receiver
             if ready = '0' then
                 letter_id <= 0;                                                         -- if there is some other stuff running (ready check isn't complete) then 7 seg shows '-'
             else
-            
+            letter_id <= selected_index;
                 -- BUTTON SELECTION LOGIC
                 -- only works if one button pressed at a time
                 -- if we press the up/down button "selected_index" will change its value so we have different output on cathodes
@@ -98,7 +96,6 @@ begin
                 if(but_up = '0' and but_down = '0' and but_enter = '1') then
                     but_enter_counter <= but_enter_counter + 1;
                     if but_enter_counter = debounce_threshold then
-                        letter_id <= selected_index;
                         -- easy pulse mechanic to state some letter has been sent (enter pressed) for other components
                         send <= '1';
                     else send <= '0';
@@ -116,6 +113,5 @@ begin
                 letter_id <= 0;
             end if;
             end if;
-        end if;
     end process p_abc_7seg_out;
 end Behavioral;

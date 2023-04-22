@@ -47,6 +47,7 @@ entity top is
         CG : out STD_LOGIC;                         -- Cathode G
         LED16_R : out STD_LOGIC;                    -- Diode for signal view IN
         LED16_G : out STD_LOGIC                     -- Diode for signal view OUT
+        
     );
 end top;
 ----------------------------------------------------------------------------------
@@ -55,30 +56,22 @@ architecture Behavioral of top is
     constant dot_threshold : integer := 500000000;      -- threshold for dot
     constant comma_threshold : integer := 2000000000;   -- threshold for comma
 
-    signal sig_clk_en : std_logic;              -- clock enable signal
-    signal selected_letter_id : integer := 0;   -- selected letter id
-    signal recognized_letter_id : integer := 0;   -- selected letter id
-    signal ready : std_logic;                   -- ready check statement
+--    signal sig_clk_en : std_logic;              -- clock enable signal
+    signal selected_letter_id : integer;   -- selected letter id
+    signal recognized_letter_id : integer;   -- selected letter id
+    signal ready : std_logic := '1';                   -- ready check statement
     signal submit : std_logic := '0';           -- send pulse signal if we press enter or if we recognize letter
     
     signal cat : std_logic_vector(6 downto 0);  -- cathode outputs for process down below
     
 begin
-    -- component for clock enable signal
-    clock_enable : entity work.clock_enable
-        generic map (
-        g_max =>    1000000000 
-        )
-    port map (
-      clk => CLK100MHZ,
-      rst => BTNC,
-      ce  => sig_clk_en
-    );
     
-    abc_7seg_out : entity work.abc_7seg_out
+    -- this entity works as a "keyboard"
+    -- we use two buttons to select a letter (or symbol) and then submit it (via 3rd button) 
+    -- submit means we change 'selected_letter_id' and send 'submit' signal
+    letter_selector : entity work.abc_7seg_out
         port map (
             clk => CLK100MHZ,
-            clk_en => sig_clk_en,
             rst => BTNC,
             state => SW,
             but_up => BTNU,
@@ -89,10 +82,9 @@ begin
             send => submit,
             letter_id => selected_letter_id  
         );
-    morse_deliver : entity work.morse_deliver
+    morse_transmit : entity work.morse_deliver
         port map (
             clk => CLK100MHZ,
-            clk_en => sig_clk_en,
             rst => BTNC,
             state => SW,
             letter_id => selected_letter_id,
@@ -105,12 +97,12 @@ begin
             led_out => LED16_G
 
         );
-    morse_detect : entity work.morse_detect
+    morse_receive : entity work.morse_detect
         port map (
-            clk => CLK100MHZ, 
+            clk => CLK100MHZ,
+            rst => BTNC, 
             state => SW,
             an_in => JAA,
-            clk_en => sig_clk_en,
             dot_t => dot_threshold,
             comma_t => comma_threshold,
             
@@ -118,38 +110,37 @@ begin
             lett_id => recognized_letter_id
         );
         
--- We used this mechanic in the process below
---    abc_7seg_in : entity work.abc_7seg_in
---       port map (
---            clk => CLK100MHZ, 
---            state => SW,
---            clk_en => sig_clk_en,
---            rst => BTNC,
---            letter_id => selected_letter_id
---        );
         
-        
-     AN <= b"1111_1110"; -- connecting anode to 3,3V
+     AN <= b"1111_1110"; -- connecting anode to 3,3V - just one display
      
      
         -- switch process state if we expect receiving or transmitting
     process (CLK100MHZ)
         begin
             if rising_edge(CLK100MHZ) then
+            if BTNC = '0' then
+            -- I have problem with timing, this temporarily fixed it
+            -- problem is that entity abc_7seg_out outputs into selected_letter_id after first 15 ns... :-/
+            if 0 <= selected_letter_id and selected_letter_id <= 36 then 
                 if SW = '1' then
-                    cat <= id_SEV_SEG_TABLE(selected_letter_id);
-                else 
                     cat <= id_SEV_SEG_TABLE(recognized_letter_id);
+                elsif SW = '0' then 
+                    cat <= id_SEV_SEG_TABLE(selected_letter_id);
                 end if;
+                
+            else
+                cat <= id_SEV_SEG_TABLE(0);
+            end if; 
                 CA <= cat(0);
                 CB <= cat(1);
                 CC <= cat(2);
                 CD <= cat(3);
                 CE <= cat(4);
                 CF <= cat(5);
-                CG <= cat(6);
-                     
+                CG <= cat(6);       
             end if;
+            end if;
+            
         end process;
 end Behavioral;
 ----------------------------------------------------------------------------------

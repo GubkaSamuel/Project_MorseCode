@@ -25,7 +25,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity morse_deliver is
     Port (
         clk         : in std_logic;                     -- main clock
-        clk_en      : in std_logic;                     -- clock enable impulse
         rst         : in std_logic;                     -- reset
         state       : in std_logic;                     -- state switch (receiver/transmitter mode)
         letter_id   : in integer;                       -- letter id (selected from other component)
@@ -49,7 +48,6 @@ begin
     p_morse_deliver : process (clk) is
         begin
             if rising_edge(clk) then                                                    -- react on clock
-            if clk_en = '1' then                                                        -- doesnt work if clock enable isnt enabled
             if rst = '0' then                                                           -- doesnt work if reset button is pressed
             if state = '0' then                                                         -- doesnt work if set as receiver
                 ready <= not sending;                                                   -- ready is negation of sending, in the next code we are starting the sending process and making sure it wont end untill the actual "sending" is done :)
@@ -170,7 +168,6 @@ begin
             end if;
             end if;
             end if;
-            end if;  
             end if;       
         end process p_morse_deliver;    
 
