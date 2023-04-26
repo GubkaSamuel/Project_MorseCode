@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/appz/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;C:/appz/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:C:/appz/Xilinx/Vivado/2020.2/bin
+  PATH=D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:D:/Programy/Xilinx/Vivado/2020.2/bin
 else
-  PATH=C:/appz/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;C:/appz/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:C:/appz/Xilinx/Vivado/2020.2/bin:$PATH
+  PATH=D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:D:/Programy/Xilinx/Vivado/2020.2/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/240225/Documents/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1'
+HD_PWD='E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

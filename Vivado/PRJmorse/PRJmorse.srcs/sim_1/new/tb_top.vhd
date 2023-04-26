@@ -49,7 +49,9 @@ architecture Behavioral of tb_top is
     signal tb_CF : STD_LOGIC;                 
     signal tb_CG : STD_LOGIC;                   
     signal tb_LED16_R : STD_LOGIC;          
-    signal tb_LED16_G : STD_LOGIC;                 
+    signal tb_LED16_G : STD_LOGIC; 
+    
+    signal tb_sel_id : integer;                
     
 begin
     uut_top : entity work.top
@@ -73,12 +75,14 @@ begin
             CF => tb_CF,
             CG => tb_CG,
             LED16_R => tb_LED16_R,
-            LED16_G => tb_LED16_G
+            LED16_G => tb_LED16_G,
+            
+            sel_id => tb_sel_id
         );
         
      p_clk_gen : process is
         begin
-            while now < 10000 ns loop -- periods of 100MHz clock
+            while now < 30000 ns loop -- periods of 100MHz clock
                 tb_clk_100MHz <= '0';
                 wait for clk_100MHz_period / 2;
                 tb_clk_100MHz <= '1';
@@ -94,22 +98,92 @@ begin
         tb_AN <= b"1111_1110";
         tb_SW <= '0';
         
-        
+        ------------------------------------------------
         wait for 300 ns;
         tb_BTNC <= '1';
         wait for 100 ns;
         tb_BTNC <= '0';
         wait for 100 ns;
-        
+        -- reset
+        ------------------------
         tb_BTND <= '1';
         wait for 100 ns;
         tb_BTND <= '0';
         wait for 100 ns;
-        
+        -- down
+        ------------------------
         tb_BTND <= '1';
         wait for 100 ns;
         tb_BTND <= '0';
         wait for 100 ns;
+        -- down
+        ------------------------        
+        tb_BTNU <= '1';
+        wait for 100 ns;
+        tb_BTNU <= '0';
+        wait for 100 ns;
+        -- up
+        ------------------------
+        tb_BTNU <= '1';
+        wait for 100 ns;
+        tb_BTNU <= '0';
+        wait for 100 ns;
+        -- up
+        ------------------------
+        tb_BTNU <= '1';
+        wait for 100 ns;
+        tb_BTNU <= '0';
+        wait for 100 ns;
+        -- up
+        ------------------------
+        tb_BTNU <= '1';
+        wait for 100 ns;
+        tb_BTNU <= '0';
+        wait for 100 ns;
+        -- up
+        ------------------------
+        tb_BTNR <= '1';
+        wait for 100 ns;
+        tb_BTNR <= '0';
+        wait for 100 ns;
+        -- enter
+        ------------------------
+        ------------------------------------------------
+        tb_SW <= '1';
+        ------------------------
+        tb_JAA <= '1';
+        wait for 44 ns;
+        tb_JAA <= '0';
+        wait for 78 ns;
+        -- .
+        tb_JAA <= '1';
+        wait for 121 ns;
+        tb_JAA <= '0';
+        wait for 440 ns;
+        -- -
+        
+        -- A
+        ------------------------
+        tb_JAA <= '1';
+        wait for 44 ns;
+        tb_JAA <= '0';
+        wait for 78 ns;
+        -- .
+        tb_JAA <= '1';
+        wait for 121 ns;
+        tb_JAA <= '0';
+        wait for 140 ns;
+        -- -
+        tb_JAA <= '1';
+        wait for 44 ns;
+        tb_JAA <= '0';
+        wait for 78 ns;
+        -- .
+        
+        -- R
+        ------------------------
+        
+        
         
         report "Stimulus process finished";
         wait;

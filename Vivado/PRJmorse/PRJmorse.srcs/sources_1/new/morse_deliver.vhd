@@ -148,6 +148,7 @@ begin
                     elsif morse_code(morse_index) = ' ' then
                         an_out <= '0';
                         led_out <= '0';
+                        sending <= '0';
                     else
                         an_out <= '0';
                         led_out <= '0';

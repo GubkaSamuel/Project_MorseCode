@@ -2,11 +2,11 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Apr 22 01:36:32 2023
-# Process ID: 24240
+# Start of session at: Wed Apr 26 02:00:07 2023
+# Process ID: 6068
 # Current directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim/xsim.dir/tb_abc_7seg_out_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim/xsim.dir/tb_morse_detect_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim/xsim.dir/tb_abc_7seg_out_behav/webtalk/xsim_webtalk.tcl -notrace
+source E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.sim/sim_1/behav/xsim/xsim.dir/tb_morse_detect_behav/webtalk/xsim_webtalk.tcl -notrace

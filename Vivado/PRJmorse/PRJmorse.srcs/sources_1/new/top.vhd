@@ -46,8 +46,9 @@ entity top is
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
         LED16_R : out STD_LOGIC;                    -- Diode for signal view IN
-        LED16_G : out STD_LOGIC                     -- Diode for signal view OUT
+        LED16_G : out STD_LOGIC;                     -- Diode for signal view OUT
         
+        sel_id : out integer
     );
 end top;
 ----------------------------------------------------------------------------------
@@ -118,27 +119,29 @@ begin
     process (CLK100MHZ)
         begin
             if rising_edge(CLK100MHZ) then
-            if BTNC = '0' then
-            -- I have problem with timing, this temporarily fixed it
-            -- problem is that entity abc_7seg_out outputs into selected_letter_id after first 15 ns... :-/
-            if 0 <= selected_letter_id and selected_letter_id <= 36 then 
-                if SW = '1' then
-                    cat <= id_SEV_SEG_TABLE(recognized_letter_id);
-                elsif SW = '0' then 
-                    cat <= id_SEV_SEG_TABLE(selected_letter_id);
+            sel_id <= recognized_letter_id;
+                if BTNC = '0' then
+                    -- I have problem with timing, this temporarily fixed it
+                    -- problem is that entity abc_7seg_out outputs into selected_letter_id after first 15 ns... :-/ 
+                    -- at the begining every integer is at its lower position (minus two bilion or st) so i added if to test if its in range
+                    if 0 <= selected_letter_id and selected_letter_id <= 36 and SW = '0' then
+                        cat <= id_SEV_SEG_TABLE(selected_letter_id);
+                    end if;
+                    
+                    if 0 <= recognized_letter_id and recognized_letter_id <= 36 and SW = '1' then
+                        cat <= id_SEV_SEG_TABLE(recognized_letter_id);     
+                    end if;
+                else
+                    cat <= id_SEV_SEG_TABLE(0);      
                 end if;
                 
-            else
-                cat <= id_SEV_SEG_TABLE(0);
-            end if; 
-                CA <= cat(0);
-                CB <= cat(1);
-                CC <= cat(2);
+                CA <= cat(6);
+                CB <= cat(5);
+                CC <= cat(4);
                 CD <= cat(3);
-                CE <= cat(4);
-                CF <= cat(5);
-                CG <= cat(6);       
-            end if;
+                CE <= cat(2);
+                CF <= cat(1);
+                CG <= cat(0);     
             end if;
             
         end process;

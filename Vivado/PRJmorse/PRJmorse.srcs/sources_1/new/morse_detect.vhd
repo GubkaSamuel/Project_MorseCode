@@ -45,9 +45,10 @@ architecture Behavioral of morse_detect is
 -- local variables (morse_state with 4 possible states)
     type morse_state is (IDLE, SIGNAL_ON, SIGNAL_OFF, INTER_LETTER);
     signal current_state: morse_state;
-    signal current_letter: string(1 to 5);
-    signal current_length: integer := 0;
-
+    signal current_letter: string(1 to 5) := "     ";
+    signal current_length: integer := 0; -- local counter
+    signal morse_length : integer := 0; -- variable to keep track of the number of morse symbols
+    
 begin
     process (clk)
     begin
@@ -71,24 +72,28 @@ begin
                 -- we have '1' on imput and we are waiting for '0', then we decide if it was a comma or dot (1 or 0)
                 when SIGNAL_ON =>
                     current_length <= current_length + 1;
-                    if an_in = '0' then
-                        if current_length <= dot_t then
-                            if current_letter'length < 5 then
-                                current_letter <= current_letter & "0";
-                            end if;
-                        elsif current_length <= comma_t then
-                            if current_letter'length < 5 then
-                                current_letter <= current_letter & "1";
-                            else
+                        if an_in = '0' then
+                            if current_length <= dot_t then
+                                if morse_length < 5 then
+                                    current_letter(morse_length + 1) <= '0';
+                                    morse_length <= morse_length + 1;
+                                    current_state <= INTER_LETTER;
+                                end if;
+                            elsif current_length <= comma_t then
+                                if morse_length < 5 then
+                                    current_letter(morse_length + 1) <= '1';
+                                    morse_length <= morse_length + 1;
+                                    current_state <= INTER_LETTER;
+                                else
+                                    current_length <= 0;
+                                    current_state <= IDLE;
+                                end if;
+                                current_state <= SIGNAL_OFF;
                                 current_length <= 0;
-                                current_state <= IDLE;
+                            else
+                                current_state <= INTER_LETTER;    
                             end if;
-                            current_state <= SIGNAL_OFF;
-                            current_length <= 0;
-                        else
-                            current_state <= INTER_LETTER;    
                         end if;
-                    end if;
                 
                 -- we have '0' on imput but we still dont know if the letter ended, so we wait for '0' or for *comma_t* time to continue with signal_on or to submit letter
                 when SIGNAL_OFF =>
@@ -108,6 +113,11 @@ begin
                     else
                         current_length <= current_length + 1;
                         if current_length > comma_t then
+                            
+                            -- the rest of the code
+                            -- case statement to assign lett_id based on current_letter
+                            -- reset current_letter to spaces
+                            -- current_state <= IDLE;
                             case current_letter is
                                 when "01   " =>
                                     lett_id <= 1; -- A
@@ -185,9 +195,11 @@ begin
                                     lett_id <= -1; -- neplatná hodnota
                             end case;
                             current_letter <= "     ";
+                            morse_length <= 0;
                             current_state <= IDLE;
                         end if;
                     end if;
+                
             end case;
         end if;
         end if;

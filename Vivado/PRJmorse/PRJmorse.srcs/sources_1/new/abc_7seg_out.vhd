@@ -48,7 +48,7 @@ architecture Behavioral of abc_7seg_out is
     signal but_up_counter : integer := 0;               -- add debounce counter for but_up
     signal but_down_counter : integer := 0;             -- add debounce counter for but_down
     signal but_enter_counter : integer := 0;            -- add debounce counter for but_enter
-    constant debounce_threshold : integer := 0;--50000;     -- set debounce threshold
+    constant debounce_threshold : integer := 1000000;   -- set debounce threshold (1000000 => 10 ms)
 
 
 begin
@@ -56,62 +56,62 @@ begin
     begin
         if rising_edge(clk) then                                                        -- react on clock
             if rst = '0' then                                                           -- doesnt work if reset button is pressed
-            if state = '0' then                                                         -- doesnt work if set as receiver
-            if ready = '0' then
-                letter_id <= 0;                                                         -- if there is some other stuff running (ready check isn't complete) then 7 seg shows '-'
-            else
-            letter_id <= selected_index;
-                -- BUTTON SELECTION LOGIC
-                -- only works if one button pressed at a time
-                -- if we press the up/down button "selected_index" will change its value so we have different output on cathodes
-                -- implemented simple logic so "selected_index" can be on range 1 to 36
-                -- signal on cathodes is defined in "sev_seg_pkg"
-                -- after finding the letter, we need to press enter button - it will change letter_id integer so other components can work with it (declared in top.vhd)
-                
-                --db for up
-                if(but_up = '1' and but_down = '0' and but_enter = '0') then 
-                    but_up_counter <= but_up_counter + 1;
-                    if but_up_counter = debounce_threshold then       
-                        if(selected_index < 36) then
-                            selected_index <= selected_index + 1;
-                        else selected_index <= 1;
-                        end if;                       
-                    end if;
-                else but_up_counter <= 0;
-                end if;
-                
-                --db for down
-                if(but_up = '0' and but_down = '1' and but_enter = '0') then
-                    but_down_counter <= but_down_counter + 1;
-                    if but_down_counter = debounce_threshold then
-                        if(selected_index > 0) then
-                        selected_index <= selected_index - 1;
-                        else selected_index <= 36;
+                if state = '0' then                                                         -- doesnt work if set as receiver
+                if ready = '0' then
+                    letter_id <= 0;                                                         -- if there is some other stuff running (ready check isn't complete) then 7 seg shows '-'
+                else
+                letter_id <= selected_index;
+                    -- BUTTON SELECTION LOGIC
+                    -- only works if one button pressed at a time
+                    -- if we press the up/down button "selected_index" will change its value so we have different output on cathodes
+                    -- implemented simple logic so "selected_index" can be on range 1 to 36
+                    -- signal on cathodes is defined in "sev_seg_pkg"
+                    -- after finding the letter, we need to press enter button - it will change letter_id integer so other components can work with it (declared in top.vhd)
+                    
+                    --db for up
+                    if(but_up = '1' and but_down = '0' and but_enter = '0') then 
+                        but_up_counter <= but_up_counter + 1;
+                        if but_up_counter = debounce_threshold then       
+                            if(selected_index < 36) then
+                                selected_index <= selected_index + 1;
+                            else selected_index <= 1;
+                            end if;                       
                         end if;
+                    else but_up_counter <= 0;
                     end if;
-                else but_down_counter <= 0;
+                    
+                    --db for down
+                    if(but_up = '0' and but_down = '1' and but_enter = '0') then
+                        but_down_counter <= but_down_counter + 1;
+                        if but_down_counter = debounce_threshold then
+                            if(selected_index > 1) then
+                            selected_index <= selected_index - 1;
+                            else selected_index <= 36;
+                            end if;
+                        end if;
+                    else but_down_counter <= 0;
+                    end if;
+                    
+                    --db for enter
+                    if(but_up = '0' and but_down = '0' and but_enter = '1') then
+                        but_enter_counter <= but_enter_counter + 1;
+                        if but_enter_counter = debounce_threshold then
+                            -- easy pulse mechanic to state some letter has been sent (enter pressed) for other components
+                            send <= '1';
+                        else send <= '0';
+                        end if;    
+                    else but_enter_counter <= 0;
+                    end if;
+                    
                 end if;
-                
-                --db for enter
-                if(but_up = '0' and but_down = '0' and but_enter = '1') then
-                    but_enter_counter <= but_enter_counter + 1;
-                    if but_enter_counter = debounce_threshold then
-                        -- easy pulse mechanic to state some letter has been sent (enter pressed) for other components
-                        send <= '1';
-                    else send <= '0';
-                    end if;    
-                else but_enter_counter <= 0;
+                else
+                    but_up_counter <= 0;
+                    but_down_counter <= 0;
+                    but_enter_counter <= 0;
                 end if;
-                
-            end if;
-            else
-                but_up_counter <= 0;
-                but_down_counter <= 0;
-                but_enter_counter <= 0;
-            end if;
             else
                 letter_id <= 0;
             end if;
-            end if;
+        end if;
     end process p_abc_7seg_out;
 end Behavioral;
