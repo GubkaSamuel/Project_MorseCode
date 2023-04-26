@@ -16,7 +16,7 @@ set rt::rc [catch {
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1/.Xil/Vivado-7832-DESKTOP-CR729O1/realtime/tmp"
+    set ::env(RT_TMP) "E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/.Xil/Vivado-15692-DESKTOP-CR729O1/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
       file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
@@ -26,7 +26,6 @@ set rt::rc [catch {
 
     rt::set_parameter datapathDensePacking false
     set rt::partid xc7a50ticsg324-1L
-    source $::env(HRT_TCL_PATH)/rtSynthParallelPrep.tcl
      file delete -force synth_hints.os
 
     set rt::multiChipSynthesisFlow false
@@ -52,7 +51,7 @@ set rt::rc [catch {
     rt::set_parameter elaborateOnly true
     rt::set_parameter elaborateRtl true
     rt::set_parameter eliminateRedundantBitOperator false
-    rt::set_parameter elaborateRtlOnlyFlow false
+    rt::set_parameter elaborateRtlOnlyFlow true
     rt::set_parameter writeBlackboxInterface true
     rt::set_parameter merge_flipflops true
     rt::set_parameter srlDepthThreshold 3
@@ -61,7 +60,7 @@ set rt::rc [catch {
     rt::set_parameter webTalkPath {}
     rt::set_parameter synthDebugLog false
     rt::set_parameter printModuleName false
-    rt::set_parameter enableSplitFlowPath "E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1/.Xil/Vivado-7832-DESKTOP-CR729O1/"
+    rt::set_parameter enableSplitFlowPath "E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/.Xil/Vivado-15692-DESKTOP-CR729O1/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 
@@ -80,6 +79,11 @@ set rt::rc [catch {
     if { $rt::flowresult == 1 } { return -code error }
 
 
+  set hsKey [rt::get_parameter helper_shm_key] 
+  if { $hsKey != "" && [info exists ::env(BUILTIN_SYNTH)] && [rt::get_parameter enableParallelHelperSpawn] } { 
+     $rt::db killSynthHelper $hsKey
+  } 
+  rt::set_parameter helper_shm_key "" 
     if { [ info exists ::env(RT_TMP) ] } {
       if { [info exists ok_to_delete_rt_tmp] && $ok_to_delete_rt_tmp } { 
         file delete -force $::env(RT_TMP)

@@ -49,9 +49,7 @@ architecture Behavioral of tb_top is
     signal tb_CF : STD_LOGIC;                 
     signal tb_CG : STD_LOGIC;                   
     signal tb_LED16_R : STD_LOGIC;          
-    signal tb_LED16_G : STD_LOGIC; 
-    
-    signal tb_sel_id : integer;                
+    signal tb_LED16_G : STD_LOGIC;             
     
 begin
     uut_top : entity work.top
@@ -75,9 +73,7 @@ begin
             CF => tb_CF,
             CG => tb_CG,
             LED16_R => tb_LED16_R,
-            LED16_G => tb_LED16_G,
-            
-            sel_id => tb_sel_id
+            LED16_G => tb_LED16_G
         );
         
      p_clk_gen : process is
@@ -148,6 +144,7 @@ begin
         wait for 100 ns;
         -- enter
         ------------------------
+        wait for 1000 ns;
         ------------------------------------------------
         tb_SW <= '1';
         ------------------------

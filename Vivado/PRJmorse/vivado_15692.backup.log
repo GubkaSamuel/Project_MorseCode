@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Apr 26 03:39:35 2023
+# Process ID: 15692
+# Current directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20352 E:\Škola\DE1\Project_MorseCode\Vivado\PRJmorse\PRJmorse.xpr
+# Log file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/vivado.log
+# Journal file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programy/Xilinx/Vivado/2020.2/data/ip'.
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a50ticsg324-1L
+Top: top
+INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 1556.484 ; gain = 244.984
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'abc_7seg_out' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'abc_7seg_out' (1#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'morse_deliver' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'morse_deliver' (2#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'morse_detect' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'morse_detect' (3#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'top' (4#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Apr 26 03:39:35 2023
+# Process ID: 15692
+# Current directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20352 E:\Škola\DE1\Project_MorseCode\Vivado\PRJmorse\PRJmorse.xpr
+# Log file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/vivado.log
+# Journal file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.xpr
+synth_design -rtl -rtl_skip_mlo -name rtl_1

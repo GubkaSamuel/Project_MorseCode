@@ -1,0 +1,135 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 15692
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Apr 26 03:39:43 CEST 2023
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 20
+
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 3
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	D:/Programy/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	D:/Programy/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	RTX3070
+User home directory: C:/Users/RTX3070
+User working directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: D:/Programy/Xilinx/Vivado
+HDI_APPROOT: D:/Programy/Xilinx/Vivado/2020.2
+RDI_DATADIR: D:/Programy/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: D:/Programy/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/RTX3070/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	D:/Programy/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/vivado.log
+Vivado journal file location: 	E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/vivado.jou
+Engine tmp dir: 	E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/.Xil/Vivado-15692-DESKTOP-CR729O1
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: D:/Programy/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: D:/Programy/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: D:/Programy/Xilinx/Vivado/2020.2
+XILINX_VIVADO: D:/Programy/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: D:/Programy/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	155 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,114 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 111 MB (+113681kb) [00:00:02]
+// [Engine Memory]: 1,114 MB (+1016752kb) [00:00:02]
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: E:\Škola\DE1\Project_MorseCode\Vivado\PRJmorse\PRJmorse.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 121 MB (+5158kb) [00:00:04]
+// WARNING: HEventQueue.dispatchEvent() is taking  1033 ms.
+// Tcl Message: open_project E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programy/Xilinx/Vivado/2020.2/data/ip'. 
+// Project name: PRJmorse; location: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse; part: xc7a50ticsg324-1L
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// HMemoryUtils.trashcanNow. Engine heap size: 1,114 MB. GUI used memory: 78 MB. Current time: 4/26/23, 3:39:44 AM CEST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+// [GUI Memory]: 136 MB (+8739kb) [00:00:14]
+selectCodeEditor("top.vhd", 205, 521); // bP
+selectCodeEditor("top.vhd", 225, 486); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top.vhd", 363, 328); // bP
+selectCodeEditor("top.vhd", 313, 416); // bP
+selectCodeEditor("top.vhd", 97, 417); // bP
+selectCodeEditor("top.vhd", 97, 417, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 314, 414); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 20 seconds
+selectCodeEditor("top.vhd", 129, 446); // bP
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cr): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A
+// Tcl Message: synth_design -rtl -rtl_skip_mlo -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -rtl_skip_mlo -name rtl_1 Starting synth_design Using part: xc7a50ticsg324-1L Top: top 

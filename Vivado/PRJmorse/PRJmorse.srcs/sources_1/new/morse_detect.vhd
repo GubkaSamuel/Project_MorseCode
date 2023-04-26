@@ -202,6 +202,11 @@ begin
                 
             end case;
         end if;
+        else
+            current_letter <= "     ";
+            morse_length <= 0;
+            current_length <= 0;
+            current_state <= IDLE;
         end if;
         end if;
     end process;

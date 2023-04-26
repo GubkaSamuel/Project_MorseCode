@@ -46,22 +46,19 @@ entity top is
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
         LED16_R : out STD_LOGIC;                    -- Diode for signal view IN
-        LED16_G : out STD_LOGIC;                     -- Diode for signal view OUT
-        
-        sel_id : out integer
+        LED16_G : out STD_LOGIC                     -- Diode for signal view OUT
     );
 end top;
 ----------------------------------------------------------------------------------
 architecture Behavioral of top is
     
-    constant dot_threshold : integer := 500000000;      -- threshold for dot
-    constant comma_threshold : integer := 2000000000;   -- threshold for comma
+    constant dot_threshold : integer := 5;--00000000;      -- threshold for dot
+    constant comma_threshold : integer := 20;--00000000;   -- threshold for comma
 
---    signal sig_clk_en : std_logic;              -- clock enable signal
     signal selected_letter_id : integer;   -- selected letter id
     signal recognized_letter_id : integer;   -- selected letter id
     signal ready : std_logic := '1';                   -- ready check statement
-    signal submit : std_logic := '0';           -- send pulse signal if we press enter or if we recognize letter
+    signal submit : std_logic := '0';           -- send signal if we press enter or if we recognize letter
     
     signal cat : std_logic_vector(6 downto 0);  -- cathode outputs for process down below
     
@@ -119,7 +116,6 @@ begin
     process (CLK100MHZ)
         begin
             if rising_edge(CLK100MHZ) then
-            sel_id <= recognized_letter_id;
                 if BTNC = '0' then
                     -- I have problem with timing, this temporarily fixed it
                     -- problem is that entity abc_7seg_out outputs into selected_letter_id after first 15 ns... :-/ 

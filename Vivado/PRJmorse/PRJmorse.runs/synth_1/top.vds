@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Apr 26 03:16:48 2023
-# Process ID: 7832
+# Start of session at: Wed Apr 26 04:51:30 2023
+# Process ID: 19348
 # Current directory: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.runs/synth_1/top.vds
@@ -17,15 +17,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t
 INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16148
+INFO: [Synth 8-7075] Helper process launched with PID 9404
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1110.016 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 1109.492 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'top' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]
 INFO: [Synth 8-638] synthesizing module 'abc_7seg_out' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'abc_7seg_out' (1#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/abc_7seg_out.vhd:45]
 INFO: [Synth 8-638] synthesizing module 'morse_deliver' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'morse_deliver' (2#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_deliver.vhd:41]
 INFO: [Synth 8-638] synthesizing module 'morse_detect' [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'morse_detect' (3#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/morse_detect.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'top' (4#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'top' (4#1) [E:/Škola/DE1/Project_MorseCode/Vivado/PRJmorse/PRJmorse.srcs/sources_1/new/top.vhd:53]
