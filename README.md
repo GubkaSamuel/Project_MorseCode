@@ -8,6 +8,7 @@
   - [Implemented elements](#implemented-elements)
     - [Debounce mechanics](#debounce-mechanics)
     - [Custom library](#custom-library)
+    - [Detection logic](#detection-logic)
   - [Component(s) simulation](#components-simulation)
     - [Top](#top)
     - [Abc_7seg_out](#abc_7seg_out)
