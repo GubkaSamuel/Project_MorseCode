@@ -1,3 +1,6 @@
+# Project Morse 
+
+
 - [Team members](#team-members)
 - [Theoretical description and explanation](#theoretical-description-and-explanation)
 - [Hardware description of demo application](#hardware-description-of-demo-application)
