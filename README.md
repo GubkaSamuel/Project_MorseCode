@@ -35,6 +35,22 @@ Receive the signal on pin JA[0]. In this state, the 7-segment display shows the 
 
 ![your figure](PRJmorse.drawio.png)
 
+
+### Implemented elements
+
+#### Debounce mechanics
+![your figure](debounce.png)
+This mechanism ensures that the button is only pressed once. Once pressed, a local counter is activated, which counts up to the size defined in the constant debounce_threshold. Only then will the code be executed.
+
+This eliminates transient phenomena such as repeated pressing, unintended double presses, and so on.
+
+#### Custom library
+![your figure](custom_library.png)
+With this component, we define our own functions and types, which are stored in a library and called by a name of our choice. In our case, we use it to convert an index and a symbol to a 7-segment code.
+
+Unfortunately, I couldn't use the library everywhere, even though I had previously defined it, because I ran into a problem with the size of a string (array) and had to define it using a case statement. However, that's the first thing I would change in future versions of the program.
+
+
 ### Component(s) simulation
 
 #### Top
@@ -60,11 +76,16 @@ We tested (with modified thresholds for the period and comma) the Morse code of 
 
 ## Instructions
 
-Write an instruction manual for your application, including photos or a link to a video.
+To select the receiver/transmitter, toggle the switch (lower position for transmitter, upper position for receiver).
+
+In transmitter mode, use the up and down buttons to select a character. Once you have selected a letter, send it using the right (enter) key. To abort the send operation, press the middle button (reset) at any time. During sending, the display shows '-' and you cannot select and send letters.
+
+In receiver mode you do nothing but wait for the signal to be received and then you can see the converted signal on the display.
 
 ## References
 
 1. https://codegolf.stackexchange.com/questions/173837/longest-seven-segment-word
+
 Map for 7-segment display:
 ![your figure](abeceda_7seg.jpg)
 2. https://en.wikipedia.org/wiki/Morse_code
