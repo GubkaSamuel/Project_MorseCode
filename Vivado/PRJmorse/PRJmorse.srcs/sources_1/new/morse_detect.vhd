@@ -35,7 +35,7 @@ entity morse_detect is
         dot_t       : in integer;                   -- dot threshold 
         comma_t     : in integer;                   -- comma threshold
 
-        led         : out std_logic;                -- signal imput visualizer
+      -- led         : out std_logic;                -- signal imput visualizer
         lett_id     : out integer                   -- recognized letter id
     );
 end morse_detect;
@@ -56,8 +56,9 @@ begin
         if rising_edge(clk) then
         if rst = '0' then
         if state = '1' then
+            
             -- led indicates if analog_in is 0 or 1
-            led <= an_in;
+            --led <= an_in;
             
             -- 4 cases (states)
             case current_state is

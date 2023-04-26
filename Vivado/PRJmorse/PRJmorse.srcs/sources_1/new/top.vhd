@@ -45,15 +45,15 @@ entity top is
         CE : out STD_LOGIC;                         -- Cathode E
         CF : out STD_LOGIC;                         -- Cathode F
         CG : out STD_LOGIC;                         -- Cathode G
-        LED16_R : out STD_LOGIC;                    -- Diode for signal view IN
+        LED17_R : out STD_LOGIC;                    -- Diode for signal view IN
         LED16_G : out STD_LOGIC                     -- Diode for signal view OUT
     );
 end top;
 ----------------------------------------------------------------------------------
 architecture Behavioral of top is
     
-    constant dot_threshold : integer := 5;--00000000;      -- threshold for dot
-    constant comma_threshold : integer := 20;--00000000;   -- threshold for comma
+    constant dot_threshold : integer := 50000000;      -- threshold for dot
+    constant comma_threshold : integer := 200000000;   -- threshold for comma
 
     signal selected_letter_id : integer;   -- selected letter id
     signal recognized_letter_id : integer;   -- selected letter id
@@ -104,12 +104,13 @@ begin
             dot_t => dot_threshold,
             comma_t => comma_threshold,
             
-            led => LED16_R,
+   --         led => LED16_R,
             lett_id => recognized_letter_id
         );
         
         
      AN <= b"1111_1110"; -- connecting anode to 3,3V - just one display
+     LED17_R <= JAA;
      
      
         -- switch process state if we expect receiving or transmitting

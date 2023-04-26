@@ -48,7 +48,7 @@ architecture Behavioral of abc_7seg_out is
     signal but_up_counter : integer := 0;               -- add debounce counter for but_up
     signal but_down_counter : integer := 0;             -- add debounce counter for but_down
     signal but_enter_counter : integer := 0;            -- add debounce counter for but_enter
-    constant debounce_threshold : integer := 0;--1000000;   -- set debounce threshold (1000000 => 10 ms)
+    constant debounce_threshold : integer := 1000000;   -- set debounce threshold (1000000 => 10 ms)
 
 
 begin
