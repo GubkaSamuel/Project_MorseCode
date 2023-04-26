@@ -70,6 +70,17 @@ With this component, we define our own functions and types, which are stored in 
 
 Unfortunately, I couldn't use the library everywhere, even though I had previously defined it, because I ran into a problem with the size of a string (array) and had to define it using a case statement. However, that's the first thing I would change in future versions of the program.
 
+#### Detection logic
+![your figure](detect_logic.png)
+
+This code defines four cases, or states, that the program can be in. The first state, **IDLE**, is waiting for a '1' input signal. Once this is received, the program resets the *current length* and transitions to the **SIGNAL_ON** state.
+
+In the **SIGNAL_ON** state, the program waits for a '0' input signal to determine whether the signal represents a dot or a comma in Morse code. The length of the signal is tracked using the *current_length* variable. If the signal is a dot and the Morse code letter is not yet complete, the program adds a '0' to the current_letter array and transitions to the **INTER_LETTER** state. If the signal is a comma and the Morse code letter is not yet complete, the program adds a '1' to the current_letter array and transitions to the **INTER_LETTER** state. If the Morse code letter is already complete, the program transitions back to the **IDLE** state.
+
+In the **SIGNAL_OFF** state, the program waits for a '0' input signal to determine whether the Morse code letter is complete or not. If the signal is a '1', the program transitions back to the **SIGNAL_ON** state. If the signal is a '0' and the time interval is less than *dot_t*, the program waits for another signal to continue the current letter. If the time interval is greater than *dot_t*, the program transitions to the **INTER_LETTER** state.
+
+In the **INTER_LETTER state**, the program waits for a '1' input signal to determine the end of the current Morse code letter. Once this is received, the program resets the current length and transitions back to the **SIGNAL_ON** state. If the end of the letter is not detected within the *comma_t* time interval, the program transitions back to the **SIGNAL_OFF** state.
+
 
 ### Component(s) simulation
 
@@ -108,9 +119,9 @@ In receiver mode you do nothing but wait for the signal to be received and then 
 
 ## References
 
-1. https://codegolf.stackexchange.com/questions/173837/longest-seven-segment-word
-
 Map for 7-segment display:
 
 ![your figure](abeceda_7seg.jpg)
+
+1. https://codegolf.stackexchange.com/questions/173837/longest-seven-segment-word
 2. https://en.wikipedia.org/wiki/Morse_code
